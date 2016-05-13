@@ -169,7 +169,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.97664974865160492" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="y7f-9V-Mha" firstAttribute="leading" secondItem="Gxt-gf-shh" secondAttribute="leading" constant="45" id="FL8-2g-CwY"/>
                                     <constraint firstItem="yJ6-sI-4NO" firstAttribute="top" secondItem="y7f-9V-Mha" secondAttribute="bottom" id="Kyz-6m-HoV"/>
@@ -330,7 +330,7 @@
                         <barButtonItem key="rightBarButtonItem" image="barget" id="oMB-qS-Up1">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="iYC-KV-pOk" kind="show" identifier="budgetShow" id="ALI-pc-bbw"/>
+                                <segue destination="mJC-E3-aXI" kind="show" id="lOK-UY-7za"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -344,6 +344,7 @@
                         <outlet property="topCenterView" destination="jPo-O7-TX7" id="XuH-Zj-gKb"/>
                         <outlet property="topCnDateView" destination="TUG-ns-9D1" id="zWF-P7-i82"/>
                         <segue destination="QlM-aS-PoM" kind="show" identifier="accountDetailSegue" id="s56-6s-H5b"/>
+                        <segue destination="iYC-KV-pOk" kind="show" identifier="budgetShow" id="anh-CY-mxc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dG-xv-PZ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -803,6 +804,9 @@
                                 <state key="normal" title="设置">
                                     <color key="titleColor" red="0.28235294117647058" green="0.77254901960784317" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="mJC-E3-aXI" kind="show" id="3DR-J6-9iH"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥2000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AI5-NP-xGm">
                                 <rect key="frame" x="129" y="265" width="61" height="21"/>
@@ -879,6 +883,119 @@
             </objects>
             <point key="canvasLocation" x="659" y="181"/>
         </scene>
+        <!--设置预算-->
+        <scene sceneID="6Ds-Sk-THe">
+            <objects>
+                <viewController title="设置预算" id="mJC-E3-aXI" customClass="BudgetSetupViewController" customModule="homefinancing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ozs-IH-kip"/>
+                        <viewControllerLayoutGuide type="bottom" id="hLM-2L-t7s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vBr-ba-lBx">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本月预算" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19y-IX-gSA">
+                                <rect key="frame" x="21" y="30" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="结算日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jN0-Su-bYR">
+                                <rect key="frame" x="21" y="92" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每月第" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUy-Lu-7nS">
+                                <rect key="frame" x="185" y="92" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZh-bV-rVO">
+                                <rect key="frame" x="282" y="92" width="17" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Fw-It-x4E">
+                                <rect key="frame" x="16" y="71" width="308" height="1"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.85490196080000003" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="phh-ei-k51"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FEZ-WA-p3d">
+                                <rect key="frame" x="16" y="133" width="308" height="1"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.85490196080000003" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="mI0-Dw-OMM"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入金额" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GUd-pP-QnN">
+                                <rect key="frame" x="169" y="26" width="130" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="esS-jd-a7H"/>
+                                    <constraint firstAttribute="height" constant="30" id="wMy-ch-SCF"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="n" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8J-Lv-1qe">
+                                <rect key="frame" x="244" y="88" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Ahf-Hy-Cpe"/>
+                                    <constraint firstAttribute="height" constant="30" id="gbR-IY-kTF"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注：预算的周期是上月结算日到本月结算日" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wh-Uo-kiB">
+                                <rect key="frame" x="21" y="142" width="283" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="l2M-FA-FKj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="FEZ-WA-p3d" secondAttribute="leading" id="2Wo-5i-HLl"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="7Fw-It-x4E" secondAttribute="leading" id="5fP-QK-sVV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wZh-bV-rVO" secondAttribute="trailing" constant="5" id="7E1-kd-0bS"/>
+                            <constraint firstItem="7Fw-It-x4E" firstAttribute="top" secondItem="19y-IX-gSA" secondAttribute="bottom" constant="20" id="G1M-gG-TOI"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="6wh-Uo-kiB" secondAttribute="leading" constant="-5" id="GNw-RC-suC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6wh-Uo-kiB" secondAttribute="trailing" id="GUd-qS-pJL"/>
+                            <constraint firstItem="6wh-Uo-kiB" firstAttribute="top" secondItem="FEZ-WA-p3d" secondAttribute="bottom" constant="8" id="I7w-X3-yps"/>
+                            <constraint firstItem="GUd-pP-QnN" firstAttribute="top" secondItem="Ozs-IH-kip" secondAttribute="bottom" constant="26" id="KXQ-zN-MyI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GUd-pP-QnN" secondAttribute="trailing" constant="5" id="LrL-Po-0aV"/>
+                            <constraint firstItem="v8J-Lv-1qe" firstAttribute="leading" secondItem="yUy-Lu-7nS" secondAttribute="trailing" constant="8" id="Qj8-Xq-t2o"/>
+                            <constraint firstItem="19y-IX-gSA" firstAttribute="top" secondItem="Ozs-IH-kip" secondAttribute="bottom" constant="30" id="Rwi-IF-Ssx"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="jN0-Su-bYR" secondAttribute="leading" constant="-5" id="ZdS-S5-KBY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FEZ-WA-p3d" secondAttribute="trailing" constant="-20" id="bTa-bc-7zT"/>
+                            <constraint firstItem="jN0-Su-bYR" firstAttribute="top" secondItem="7Fw-It-x4E" secondAttribute="bottom" constant="20" id="bgM-nG-hqg"/>
+                            <constraint firstItem="yUy-Lu-7nS" firstAttribute="top" secondItem="7Fw-It-x4E" secondAttribute="bottom" constant="20" id="elw-Xc-ttN"/>
+                            <constraint firstItem="FEZ-WA-p3d" firstAttribute="top" secondItem="jN0-Su-bYR" secondAttribute="bottom" constant="20" id="jfH-em-PQ2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Fw-It-x4E" secondAttribute="trailing" constant="-20" id="mZQ-wI-WHP"/>
+                            <constraint firstItem="v8J-Lv-1qe" firstAttribute="top" secondItem="7Fw-It-x4E" secondAttribute="bottom" constant="16" id="trg-4E-VC5"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="19y-IX-gSA" secondAttribute="leading" constant="-5" id="vF9-eg-Xtt"/>
+                            <constraint firstItem="wZh-bV-rVO" firstAttribute="leading" secondItem="v8J-Lv-1qe" secondAttribute="trailing" constant="8" id="y0R-bu-T3w"/>
+                            <constraint firstItem="wZh-bV-rVO" firstAttribute="top" secondItem="7Fw-It-x4E" secondAttribute="bottom" constant="20" id="z1D-e7-bRM"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hYF-sN-g9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1086" y="513"/>
+        </scene>
     </scenes>
     <resources>
         <image name="barget" width="26" height="19"/>
@@ -894,4 +1011,7 @@
         <image name="right_big_3x" width="12" height="20"/>
         <image name="right_small_3x" width="9" height="16"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="3DR-J6-9iH"/>
+    </inferredMetricsTieBreakers>
 </document>

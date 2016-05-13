@@ -34,7 +34,7 @@ class HomeViewController: HFBaseViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         self.navigationController?.navigationBar.barTintColor = appPayColor
         self.navigationController?.title = "主页"
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
@@ -57,6 +57,7 @@ class HomeViewController: HFBaseViewController,UITableViewDelegate,UITableViewDa
         progress.setColors(appIncomeColor)
         progress.trackColor = appLitePayColor
         topCenterView.addSubview(progress)
+        topCenterView.addTarget(self, action: #selector(self.budgetCircleClickAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         let blankImage = UIImage(named: "blank_bill")
         let imageWidth:CGFloat = (blankImage?.size.width)!
@@ -104,7 +105,14 @@ class HomeViewController: HFBaseViewController,UITableViewDelegate,UITableViewDa
         tableSource = resultTuple.array
         payLabel.text = resultTuple.payTotal
         incomeLabel.text = resultTuple.incomeTotal
-        surplusLabel.text = "当月结余：￥" + resultTuple.surplus
+        let monthOnlyStr:String?
+        if NSDate.yearMonthStringWithStandardFormat(NSDate()) == monthStr {
+            monthOnlyStr = "当月"
+        } else {
+            let offset = monthStr.startIndex.advancedBy(5)
+            monthOnlyStr = monthStr.substringFromIndex(offset) + "月"
+        }
+        surplusLabel.text = monthOnlyStr! + "结余：￥" + resultTuple.surplus
         if tableSource.count > 0 {
             blankView?.hidden = true
         } else {
@@ -168,6 +176,36 @@ class HomeViewController: HFBaseViewController,UITableViewDelegate,UITableViewDa
         return headerView
     }
     
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == tableSource.count - 1 {
+            return colorCellHeight
+        } else {
+            return 0
+        }
+    }
+    
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let bgView:UIView = UIView(frame: CGRectMake(0,0,SCREEN_WIDTH,colorCellHeight))
+        let circleWidht:CGFloat = colorCellHeight / 2
+        let circleView:UIView = UIView(frame: CGRectMake(SCREEN_WIDTH/2 - circleWidht/2,colorCellHeight/2 - circleWidht/2,circleWidht,circleWidht))
+        circleView.backgroundColor = UIColor.lightGrayColor()
+        circleView.layer.cornerRadius = circleWidht/2
+        bgView.addSubview(circleView)
+        
+        let verLineView = UIView(frame: CGRectMake(SCREEN_WIDTH/2 - 0.5,0,1,colorCellHeight / 2 - circleWidht / 2))
+        verLineView.backgroundColor = UIColor.lightGrayColor()
+        bgView.addSubview(verLineView)
+        
+        let startLabel:UILabel = UILabel(frame:CGRectMake(SCREEN_WIDTH/2 - 10,circleView.frame.origin.y,20,circleView.frame.size.height))
+        startLabel.font = UIFont.systemFontOfSize(12)
+        startLabel.textColor = UIColor.whiteColor()
+        startLabel.textAlignment = NSTextAlignment.Center
+        startLabel.text = "始"
+        bgView.addSubview(startLabel)
+        
+        return bgView
+    }
+    
     
     // MARK: - Navigation
 
@@ -183,6 +221,10 @@ class HomeViewController: HFBaseViewController,UITableViewDelegate,UITableViewDa
     
     @IBAction func addClickAction(sender: AnyObject) {
         
+    }
+    
+    func budgetCircleClickAction(sender: AnyObject) {
+        self.performSegueWithIdentifier("budgetShow", sender: self)
     }
 
     @IBAction func lastMonthAction(sender: AnyObject) {

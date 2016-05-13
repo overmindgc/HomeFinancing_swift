@@ -46,6 +46,7 @@
 		B770E4EE1CB6033F0091732C /* HomeItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B770E4ED1CB6033F0091732C /* HomeItemCell.swift */; };
 		B770E4F01CBB74890091732C /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B770E4EF1CBB74890091732C /* BudgetViewController.swift */; };
 		B7CC31E31CE5C740008ABA8D /* YoYoAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC31E21CE5C740008ABA8D /* YoYoAlertView.swift */; };
+		B7CC31E51CE61D3D008ABA8D /* BudgetSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC31E41CE61D3D008ABA8D /* BudgetSetupViewController.swift */; };
 		B7D00D061CE4228200C62232 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D00D051CE4228200C62232 /* DatePickerDialog.swift */; };
 		B7D00D1B1CE4300300C62232 /* NirKxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D00D1A1CE4300300C62232 /* NirKxMenu.m */; };
 		B7D00D211CE477F600C62232 /* YoYoInputAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D00D201CE477F600C62232 /* YoYoInputAlertView.swift */; };
@@ -118,6 +119,7 @@
 		B770E4ED1CB6033F0091732C /* HomeItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeItemCell.swift; sourceTree = "<group>"; };
 		B770E4EF1CBB74890091732C /* BudgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
 		B7CC31E21CE5C740008ABA8D /* YoYoAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoYoAlertView.swift; sourceTree = "<group>"; };
+		B7CC31E41CE61D3D008ABA8D /* BudgetSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetSetupViewController.swift; sourceTree = "<group>"; };
 		B7D00D051CE4228200C62232 /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
 		B7D00D191CE4300300C62232 /* NirKxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NirKxMenu.h; sourceTree = "<group>"; };
 		B7D00D1A1CE4300300C62232 /* NirKxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NirKxMenu.m; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				7B169A101C780A6F008F850C /* HomeViewController.swift */,
 				B7D00D221CE5854100C62232 /* AccountDetailViewController.swift */,
 				B770E4EF1CBB74890091732C /* BudgetViewController.swift */,
+				B7CC31E41CE61D3D008ABA8D /* BudgetSetupViewController.swift */,
 				B7EE8E0E1CD781E000D4193F /* PieChartStatisticViewController.swift */,
 				B7482FBB1CDE2CB4007FFD64 /* CreateAccountViewController.swift */,
 			);
@@ -496,6 +499,7 @@
 				B770E4EA1CB510B30091732C /* HFTableViewCell.swift in Sources */,
 				B770E4EE1CB6033F0091732C /* HomeItemCell.swift in Sources */,
 				B7CC31E31CE5C740008ABA8D /* YoYoAlertView.swift in Sources */,
+				B7CC31E51CE61D3D008ABA8D /* BudgetSetupViewController.swift in Sources */,
 				B7EE8E371CD78DA900D4193F /* PNBarChart.m in Sources */,
 				B7EDDB6E1C9A87830023DD9C /* HFBaseViewController.swift in Sources */,
 				B7482FB51CDDF6B0007FFD64 /* AppEnums.swift in Sources */,

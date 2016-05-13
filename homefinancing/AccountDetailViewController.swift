@@ -59,7 +59,7 @@ class AccountDetailViewController: HFBaseViewController {
         self.presentViewController(createVC, animated: true, completion: {})
     }
     
-    @IBAction func deleteAction(sender:AnyObject) {
+    func deleteAction(sender:AnyObject) {
         //创建alert
         let alertView = YoYoAlertView(title: "提醒", message: "确定要删除此条账单吗？", cancelButtonTitle: "取 消", sureButtonTitle: "确 定")
         //调用显示

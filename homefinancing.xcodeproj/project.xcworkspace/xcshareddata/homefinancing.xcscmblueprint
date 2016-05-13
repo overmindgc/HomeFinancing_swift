@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6B19F64C088B001E658673DF508506715F22BED8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6B19F64C088B001E658673DF508506715F22BED8" : 0,
+    "C9024BBE11272C83E4D9B4B827C2C8978FD9FB2D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AFB8FF53-82C7-4457-A2E9-D0219F66AA92",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6B19F64C088B001E658673DF508506715F22BED8" : "HomeFinancing_new\/",
+    "C9024BBE11272C83E4D9B4B827C2C8978FD9FB2D" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "homefinancing",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "homefinancing.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/overmindgc\/HomeFinancing_new.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6B19F64C088B001E658673DF508506715F22BED8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/overmindgc\/HomeFinancing.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C9024BBE11272C83E4D9B4B827C2C8978FD9FB2D"
+    }
+  ]
+}

@@ -176,7 +176,6 @@ class CreateAccountViewController: HFBaseViewController {
         if result > 0 {
             currentResult = String(result)
             let accountModel:AccountModel = AccountModel()
-//            let nowDate = NSDate().dateByAddingTimeInterval(-1 * 24 * 3600)
             if originAccountModel != nil {
                 accountModel.id = originAccountModel?.id
                 accountModel.createDate = originAccountModel?.createDate
