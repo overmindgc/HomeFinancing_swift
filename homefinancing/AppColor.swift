@@ -16,6 +16,4 @@ let appDarkBackgroundColor = UIColor(red: 55/255, green: 78/255, blue: 97/255, a
 
 let appDarkBackgroundColor_lite = UIColor(red: 70/255, green: 97/255, blue: 116/255, alpha: 1.0);
 
-class AppColor {
-
-}
+let appGrayTextColor = UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 1.0);

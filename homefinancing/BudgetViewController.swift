@@ -7,7 +7,11 @@
 //
 
 class BudgetViewController: HFBaseViewController {
-
+    
+    internal var monthPayTotalAmount:String?
+    internal var currentMonth:String?
+    internal var isNowMonth:Bool?
+    
     @IBOutlet weak var monthBudgetLabel: UILabel!
     
     @IBOutlet weak var centerCicleView: UIView!
@@ -19,6 +23,8 @@ class BudgetViewController: HFBaseViewController {
     @IBOutlet weak var monthPayLabel: UILabel!
     
     @IBOutlet weak var leftBudgetDayLabel: UILabel!
+    
+    @IBOutlet weak var monthPayTitleLabel: UILabel!
     
     var progress:KDCircularProgress!
     
@@ -42,26 +48,47 @@ class BudgetViewController: HFBaseViewController {
         progress.gradientRotateSpeed = 2
         progress.roundedCorners = true
         progress.glowMode = .NoGlow
-        progress.angle = 275
+        progress.angle = 0
         progress.setColors(appIncomeColor)
         progress.trackColor = UIColor.groupTableViewBackgroundColor()
         self.view.addSubview(progress)
+        
+        if isNowMonth != true {
+            let month:Int = Int((currentMonth?.split("-")[1])!)!
+            monthPayTitleLabel.text = String(month) + "月支出"
+        }
     }
 
+    override func viewWillAppear(animated: Bool) {
+        initBudgetViewData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func initBudgetViewData() {
+        let budget = NSUserDefaults.currentMonthBudget()
+        
+        monthBudgetLabel.text = "￥" + String(budget)
+        monthPayLabel.text = "￥" + monthPayTotalAmount!
+        
+        let monthPay:Int = Int(monthPayTotalAmount!)!
+        if budget == 0 || monthPay > budget {
+            progress.changeCircleValueWithDecimalPercent(0)
+            leftBudgetLabel.text = "￥0"
+        } else {
+            let leftAmount = budget - monthPay
+            let percent:CGFloat = CGFloat(leftAmount) / CGFloat(budget)
+            progress.changeCircleValueWithDecimalPercent(percent)
+            leftBudgetLabel.text = "￥" + String(leftAmount)
+        }
+        
+        let totalDay:Int = 30
+        let dayBudget:Int! = budget / totalDay
+        let dayPay:Int! = Int(monthPayTotalAmount!)! / totalDay
+        leftBudgetDayLabel.text = "￥" + String(dayBudget - dayPay)
     }
-    */
 
 }

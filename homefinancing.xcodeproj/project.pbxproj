@@ -37,6 +37,8 @@
 		B7482FC51CDEE74F007FFD64 /* DataStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7482FC41CDEE74F007FFD64 /* DataStorageService.swift */; };
 		B7482FC71CDF07B4007FFD64 /* AccountNumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7482FC61CDF07B4007FFD64 /* AccountNumberPad.swift */; };
 		B7482FC91CDF203A007FFD64 /* NumPadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7482FC81CDF203A007FFD64 /* NumPadButton.swift */; };
+		B76346CC1CE779B100A9DBF6 /* MemberAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76346CB1CE779B100A9DBF6 /* MemberAddButton.swift */; };
+		B76346CE1CE77E1F00A9DBF6 /* MemberStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76346CD1CE77E1F00A9DBF6 /* MemberStorageService.swift */; };
 		B770E4E11CB502280091732C /* AppConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B770E4E01CB502280091732C /* AppConsts.swift */; };
 		B770E4E31CB507300091732C /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B770E4E21CB507300091732C /* AppFont.swift */; };
 		B770E4E51CB50A490091732C /* HFBaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B770E4E41CB50A490091732C /* HFBaseTableView.swift */; };
@@ -47,6 +49,10 @@
 		B770E4F01CBB74890091732C /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B770E4EF1CBB74890091732C /* BudgetViewController.swift */; };
 		B7CC31E31CE5C740008ABA8D /* YoYoAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC31E21CE5C740008ABA8D /* YoYoAlertView.swift */; };
 		B7CC31E51CE61D3D008ABA8D /* BudgetSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC31E41CE61D3D008ABA8D /* BudgetSetupViewController.swift */; };
+		B7CC31E71CE736BC008ABA8D /* KDProgressExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC31E61CE736BC008ABA8D /* KDProgressExtension.swift */; };
+		B7CC31E91CE76B68008ABA8D /* MenberManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC31E81CE76B68008ABA8D /* MenberManagerViewController.swift */; };
+		B7CC31EB1CE76C4B008ABA8D /* MemberTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC31EA1CE76C4B008ABA8D /* MemberTableCell.swift */; };
+		B7CC31ED1CE770A8008ABA8D /* MemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CC31EC1CE770A8008ABA8D /* MemberModel.swift */; };
 		B7D00D061CE4228200C62232 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D00D051CE4228200C62232 /* DatePickerDialog.swift */; };
 		B7D00D1B1CE4300300C62232 /* NirKxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D00D1A1CE4300300C62232 /* NirKxMenu.m */; };
 		B7D00D211CE477F600C62232 /* YoYoInputAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D00D201CE477F600C62232 /* YoYoInputAlertView.swift */; };
@@ -110,6 +116,8 @@
 		B7482FC41CDEE74F007FFD64 /* DataStorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStorageService.swift; sourceTree = "<group>"; };
 		B7482FC61CDF07B4007FFD64 /* AccountNumberPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountNumberPad.swift; sourceTree = "<group>"; };
 		B7482FC81CDF203A007FFD64 /* NumPadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumPadButton.swift; sourceTree = "<group>"; };
+		B76346CB1CE779B100A9DBF6 /* MemberAddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberAddButton.swift; sourceTree = "<group>"; };
+		B76346CD1CE77E1F00A9DBF6 /* MemberStorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberStorageService.swift; sourceTree = "<group>"; };
 		B770E4E01CB502280091732C /* AppConsts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConsts.swift; sourceTree = "<group>"; };
 		B770E4E21CB507300091732C /* AppFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		B770E4E41CB50A490091732C /* HFBaseTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HFBaseTableView.swift; sourceTree = "<group>"; };
@@ -120,6 +128,10 @@
 		B770E4EF1CBB74890091732C /* BudgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
 		B7CC31E21CE5C740008ABA8D /* YoYoAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoYoAlertView.swift; sourceTree = "<group>"; };
 		B7CC31E41CE61D3D008ABA8D /* BudgetSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetSetupViewController.swift; sourceTree = "<group>"; };
+		B7CC31E61CE736BC008ABA8D /* KDProgressExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDProgressExtension.swift; sourceTree = "<group>"; };
+		B7CC31E81CE76B68008ABA8D /* MenberManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenberManagerViewController.swift; sourceTree = "<group>"; };
+		B7CC31EA1CE76C4B008ABA8D /* MemberTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberTableCell.swift; sourceTree = "<group>"; };
+		B7CC31EC1CE770A8008ABA8D /* MemberModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberModel.swift; sourceTree = "<group>"; };
 		B7D00D051CE4228200C62232 /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
 		B7D00D191CE4300300C62232 /* NirKxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NirKxMenu.h; sourceTree = "<group>"; };
 		B7D00D1A1CE4300300C62232 /* NirKxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NirKxMenu.m; sourceTree = "<group>"; };
@@ -247,6 +259,7 @@
 				B7482FB21CDDF3B5007FFD64 /* AccountModel.swift */,
 				B7482FC11CDEE625007FFD64 /* AccountTypeModel.swift */,
 				B73A18EE1CE32CC30089C6B1 /* AccountGroupStruct.swift */,
+				B7CC31EC1CE770A8008ABA8D /* MemberModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -263,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				B7482FC41CDEE74F007FFD64 /* DataStorageService.swift */,
+				B76346CD1CE77E1F00A9DBF6 /* MemberStorageService.swift */,
 			);
 			name = StorageService;
 			sourceTree = "<group>";
@@ -354,6 +368,7 @@
 				B7CC31E41CE61D3D008ABA8D /* BudgetSetupViewController.swift */,
 				B7EE8E0E1CD781E000D4193F /* PieChartStatisticViewController.swift */,
 				B7482FBB1CDE2CB4007FFD64 /* CreateAccountViewController.swift */,
+				B7CC31E81CE76B68008ABA8D /* MenberManagerViewController.swift */,
 			);
 			name = Sections;
 			sourceTree = "<group>";
@@ -386,6 +401,8 @@
 			children = (
 				B770E4EB1CB511AA0091732C /* HomeDateHeaderView.swift */,
 				B770E4ED1CB6033F0091732C /* HomeItemCell.swift */,
+				B7CC31EA1CE76C4B008ABA8D /* MemberTableCell.swift */,
+				B76346CB1CE779B100A9DBF6 /* MemberAddButton.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -397,6 +414,7 @@
 				B7482FB91CDE0165007FFD64 /* NSUserDefaultsExtension.swift */,
 				B73A18E81CE30ED80089C6B1 /* StringExtension.swift */,
 				B73A18EC1CE31D280089C6B1 /* DateExtension.swift */,
+				B7CC31E61CE736BC008ABA8D /* KDProgressExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -484,15 +502,18 @@
 				B770E4E11CB502280091732C /* AppConsts.swift in Sources */,
 				B7EE8E3C1CD78DA900D4193F /* PNLineChart.m in Sources */,
 				B770E4E31CB507300091732C /* AppFont.swift in Sources */,
+				B76346CC1CE779B100A9DBF6 /* MemberAddButton.swift in Sources */,
 				7B169A1D1C78699B008F850C /* AppColor.swift in Sources */,
 				B7EE8E3D1CD78DA900D4193F /* PNLineChartData.m in Sources */,
 				B7482FA71CDDEF5A007FFD64 /* FMDatabaseManagerClient.m in Sources */,
 				B770E4F01CBB74890091732C /* BudgetViewController.swift in Sources */,
 				B73A18EF1CE32CC30089C6B1 /* AccountGroupStruct.swift in Sources */,
 				B770E4EC1CB511AA0091732C /* HomeDateHeaderView.swift in Sources */,
+				B7CC31ED1CE770A8008ABA8D /* MemberModel.swift in Sources */,
 				B770E4E51CB50A490091732C /* HFBaseTableView.swift in Sources */,
 				B7482FAE1CDDF144007FFD64 /* GCDBModel.m in Sources */,
 				B7EDDB741C9BD9500023DD9C /* BigAddButton.swift in Sources */,
+				B7CC31E91CE76B68008ABA8D /* MenberManagerViewController.swift in Sources */,
 				B7482FBC1CDE2CB4007FFD64 /* CreateAccountViewController.swift in Sources */,
 				B7482F9D1CDDEF13007FFD64 /* FMDatabase.m in Sources */,
 				B7D00D1B1CE4300300C62232 /* NirKxMenu.m in Sources */,
@@ -500,11 +521,13 @@
 				B770E4EE1CB6033F0091732C /* HomeItemCell.swift in Sources */,
 				B7CC31E31CE5C740008ABA8D /* YoYoAlertView.swift in Sources */,
 				B7CC31E51CE61D3D008ABA8D /* BudgetSetupViewController.swift in Sources */,
+				B7CC31E71CE736BC008ABA8D /* KDProgressExtension.swift in Sources */,
 				B7EE8E371CD78DA900D4193F /* PNBarChart.m in Sources */,
 				B7EDDB6E1C9A87830023DD9C /* HFBaseViewController.swift in Sources */,
 				B7482FB51CDDF6B0007FFD64 /* AppEnums.swift in Sources */,
 				B7D00D211CE477F600C62232 /* YoYoInputAlertView.swift in Sources */,
 				B7482FC21CDEE625007FFD64 /* AccountTypeModel.swift in Sources */,
+				B7CC31EB1CE76C4B008ABA8D /* MemberTableCell.swift in Sources */,
 				B7482FC91CDF203A007FFD64 /* NumPadButton.swift in Sources */,
 				B7482FAB1CDDF069007FFD64 /* GCBaseStorage.m in Sources */,
 				B7EE8E3B1CD78DA900D4193F /* PNGenericChart.m in Sources */,
@@ -514,6 +537,7 @@
 				B73A18E91CE30ED80089C6B1 /* StringExtension.swift in Sources */,
 				B7EE8E481CD7986700D4193F /* UIBarExtension.swift in Sources */,
 				B7482F9E1CDDEF13007FFD64 /* FMDatabaseAdditions.m in Sources */,
+				B76346CE1CE77E1F00A9DBF6 /* MemberStorageService.swift in Sources */,
 				B7482FA11CDDEF13007FFD64 /* FMResultSet.m in Sources */,
 				B7D00D231CE5854100C62232 /* AccountDetailViewController.swift in Sources */,
 				B7EE8E3F1CD78DA900D4193F /* PNPieChart.m in Sources */,

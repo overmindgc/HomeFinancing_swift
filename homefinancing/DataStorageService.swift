@@ -14,7 +14,7 @@ class DataStorageService: GCBaseStorage {
     static let incomeTypeArray = [["id":"1001","name":"工资"],
                                   ["id":"1002","name":"奖金"],
                                   ["id":"1004","name":"利息"],
-                                  ["id":"1003","name":"回账"],
+                                  ["id":"1003","name":"红包"],
                                   ["id":"1005","name":"其他"]]
     static let payTypeArray = [["id":"2001","name":"一般支出"],
                                ["id":"2002","name":"日用品"],

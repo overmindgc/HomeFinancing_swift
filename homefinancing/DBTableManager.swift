@@ -12,7 +12,9 @@ class DBTableManager : GCBaseStorage {
     
     func createAllTables() {
         if !NSUserDefaults.hasInitDBTables() {
-            let success:Bool = self.createTableWithModelClass(object_getClass(AccountModel()))
+            var success:Bool = true
+            success = self.createTableWithModelClass(object_getClass(AccountModel()))
+            success = self.createTableWithModelClass(object_getClass(MemberModel()))
             if success {
                 NSUserDefaults.saveHasInitDBTables(true)
             }

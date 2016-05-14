@@ -74,4 +74,14 @@ class HomeItemCell: HFTableViewCell {
         }
     }
     
+    var hideButtomVLine:Bool? {
+        didSet {
+            if hideButtomVLine == true {
+                verLineView.frame = CGRectMake(SCREEN_WIDTH/2 - 0.5 + tableOffset,0,1,colorCellHeight / 2)
+            } else {
+                verLineView.frame = CGRectMake(SCREEN_WIDTH/2 - 0.5 + tableOffset,0,1,colorCellHeight)
+            }
+        }
+    }
+    
 }

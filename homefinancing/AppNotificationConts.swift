@@ -7,3 +7,5 @@
 //
 
 let CREATE_UPDATE_DEL_ACCOUNT_SUCCESS_NOTICATION = "createUpdateDelAccountSuccessNotification"
+
+let CHANGE_MONTH_BUDGET_NUM_SUCCESS_NOTIFICATION = "changeMonthBudgetNumSuccessNotification"
