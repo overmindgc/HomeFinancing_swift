@@ -41,6 +41,8 @@ class MemberTableCell: HFTableViewCell {
     }
     
     func initViews() {
+        self.selectionStyle = UITableViewCellSelectionStyle.None
+        
         memberLabel = UILabel(frame: CGRectZero)
         memberLabel?.textColor = appGrayTextColor
         self.addSubview(memberLabel!)

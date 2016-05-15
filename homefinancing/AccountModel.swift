@@ -11,13 +11,14 @@ class AccountModel: GCDBModel {
     var bookId:String?
     var accountDate:String?//yyyy-MM-dd
     var accountMonthDate:String?//yyyy-MM
+    var accountYearDate:String?//yyyy
     var createDate:String?
     var updateDate:String?
     var typeId:String?
     var typeName:String?
     var amount:String?
-    var menberId:String?
-    var menberName:String?
+    var memberId:String?
+    var memberName:String?
     var remark:String?
     var payOrIncome:String?
 }

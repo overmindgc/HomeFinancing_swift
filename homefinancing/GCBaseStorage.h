@@ -22,6 +22,12 @@
 /**根据model分页查询数据*/
 - (NSArray *)selectModelArrayByClass:(Class)modelClass params:(NSDictionary *)paramDict orderBy:(NSString *)columName isDesc:(BOOL)desc limitStartLine:(NSInteger)startLine perSize:(NSInteger)perSize;
 
+/**根据model查询分组sum数据*/
+- (NSArray *)groupSumModelArrayByClass:(Class)modelClass resultClass:(Class)resultClass sumStr:(NSString *)sumStr params:(NSDictionary *)paramDict groupStr:(NSString *)groupStr;
+
+/**根据model查询sum数据*/
+- (NSString *)sumModelArrayByClass:(Class)modelClass sumStr:(NSString *)sumStr params:(NSDictionary *)paramDict;
+
 /**向表中插入多条Model数据*/
 - (void)insertToTableWithArray:(NSArray *)modelArray;
 

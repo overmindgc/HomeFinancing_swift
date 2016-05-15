@@ -13,12 +13,14 @@
 
 @property (readwrite, nonatomic, strong) UIImage *image;
 @property (readwrite, nonatomic, strong) NSString *title;
+@property (readwrite, nonatomic, strong) NSString *itemId;
 @property (readwrite, nonatomic, weak) id target;
 @property (readwrite, nonatomic) SEL action;
 @property (readwrite, nonatomic, strong) UIColor *foreColor;
 @property (readwrite, nonatomic) NSTextAlignment alignment;
 
 + (instancetype) menuItem:(NSString *) title
+                   itemId:(NSString *) itemId
                     image:(UIImage *) image
                    target:(id)target
                    action:(SEL) action;

@@ -39,6 +39,12 @@
 		B7482FC91CDF203A007FFD64 /* NumPadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7482FC81CDF203A007FFD64 /* NumPadButton.swift */; };
 		B76346CC1CE779B100A9DBF6 /* MemberAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76346CB1CE779B100A9DBF6 /* MemberAddButton.swift */; };
 		B76346CE1CE77E1F00A9DBF6 /* MemberStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76346CD1CE77E1F00A9DBF6 /* MemberStorageService.swift */; };
+		B76346D21CE85FA700A9DBF6 /* PieChartGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76346D11CE85FA700A9DBF6 /* PieChartGroupModel.swift */; };
+		B76346D41CE86E3200A9DBF6 /* ChartStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76346D31CE86E3200A9DBF6 /* ChartStorageService.swift */; };
+		B76346D71CE876A400A9DBF6 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76346D61CE876A400A9DBF6 /* RandomColor.swift */; };
+		B76346D91CE876B300A9DBF6 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76346D81CE876B300A9DBF6 /* Hue.swift */; };
+		B76346DB1CE876B700A9DBF6 /* ColorDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76346DA1CE876B700A9DBF6 /* ColorDefinition.swift */; };
+		B76346DD1CE876BC00A9DBF6 /* Luminosity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76346DC1CE876BC00A9DBF6 /* Luminosity.swift */; };
 		B770E4E11CB502280091732C /* AppConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B770E4E01CB502280091732C /* AppConsts.swift */; };
 		B770E4E31CB507300091732C /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B770E4E21CB507300091732C /* AppFont.swift */; };
 		B770E4E51CB50A490091732C /* HFBaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B770E4E41CB50A490091732C /* HFBaseTableView.swift */; };
@@ -118,6 +124,12 @@
 		B7482FC81CDF203A007FFD64 /* NumPadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumPadButton.swift; sourceTree = "<group>"; };
 		B76346CB1CE779B100A9DBF6 /* MemberAddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberAddButton.swift; sourceTree = "<group>"; };
 		B76346CD1CE77E1F00A9DBF6 /* MemberStorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberStorageService.swift; sourceTree = "<group>"; };
+		B76346D11CE85FA700A9DBF6 /* PieChartGroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartGroupModel.swift; sourceTree = "<group>"; };
+		B76346D31CE86E3200A9DBF6 /* ChartStorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartStorageService.swift; sourceTree = "<group>"; };
+		B76346D61CE876A400A9DBF6 /* RandomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomColor.swift; sourceTree = "<group>"; };
+		B76346D81CE876B300A9DBF6 /* Hue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hue.swift; sourceTree = "<group>"; };
+		B76346DA1CE876B700A9DBF6 /* ColorDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorDefinition.swift; sourceTree = "<group>"; };
+		B76346DC1CE876BC00A9DBF6 /* Luminosity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Luminosity.swift; sourceTree = "<group>"; };
 		B770E4E01CB502280091732C /* AppConsts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConsts.swift; sourceTree = "<group>"; };
 		B770E4E21CB507300091732C /* AppFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		B770E4E41CB50A490091732C /* HFBaseTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HFBaseTableView.swift; sourceTree = "<group>"; };
@@ -260,6 +272,7 @@
 				B7482FC11CDEE625007FFD64 /* AccountTypeModel.swift */,
 				B73A18EE1CE32CC30089C6B1 /* AccountGroupStruct.swift */,
 				B7CC31EC1CE770A8008ABA8D /* MemberModel.swift */,
+				B76346D11CE85FA700A9DBF6 /* PieChartGroupModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -277,8 +290,20 @@
 			children = (
 				B7482FC41CDEE74F007FFD64 /* DataStorageService.swift */,
 				B76346CD1CE77E1F00A9DBF6 /* MemberStorageService.swift */,
+				B76346D31CE86E3200A9DBF6 /* ChartStorageService.swift */,
 			);
 			name = StorageService;
+			sourceTree = "<group>";
+		};
+		B76346D51CE8768B00A9DBF6 /* RandomColor */ = {
+			isa = PBXGroup;
+			children = (
+				B76346DC1CE876BC00A9DBF6 /* Luminosity.swift */,
+				B76346DA1CE876B700A9DBF6 /* ColorDefinition.swift */,
+				B76346D81CE876B300A9DBF6 /* Hue.swift */,
+				B76346D61CE876A400A9DBF6 /* RandomColor.swift */,
+			);
+			name = RandomColor;
 			sourceTree = "<group>";
 		};
 		B770E4DF1CB502160091732C /* Consts */ = {
@@ -295,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				B7EE8E101CD782A000D4193F /* homefinancing-Bridging-Header.h */,
+				B76346D51CE8768B00A9DBF6 /* RandomColor */,
 				B7D00D181CE42FF600C62232 /* NirKxMenu */,
 				B7482FA21CDDEF4D007FFD64 /* StorageBase */,
 				B7482F911CDDEF13007FFD64 /* FMDB */,
@@ -496,6 +522,7 @@
 				B7482FBA1CDE0165007FFD64 /* NSUserDefaultsExtension.swift in Sources */,
 				7B6254C01CE381200037946A /* AppNotificationConts.swift in Sources */,
 				B7D00D061CE4228200C62232 /* DatePickerDialog.swift in Sources */,
+				B76346D91CE876B300A9DBF6 /* Hue.swift in Sources */,
 				B7EE8E401CD78DA900D4193F /* PNPieChartDataItem.m in Sources */,
 				B770E4E81CB50CBE0091732C /* KDCircularProgress.swift in Sources */,
 				7B1699EF1C77FFEE008F850C /* AppDelegate.swift in Sources */,
@@ -503,7 +530,9 @@
 				B7EE8E3C1CD78DA900D4193F /* PNLineChart.m in Sources */,
 				B770E4E31CB507300091732C /* AppFont.swift in Sources */,
 				B76346CC1CE779B100A9DBF6 /* MemberAddButton.swift in Sources */,
+				B76346D71CE876A400A9DBF6 /* RandomColor.swift in Sources */,
 				7B169A1D1C78699B008F850C /* AppColor.swift in Sources */,
+				B76346DB1CE876B700A9DBF6 /* ColorDefinition.swift in Sources */,
 				B7EE8E3D1CD78DA900D4193F /* PNLineChartData.m in Sources */,
 				B7482FA71CDDEF5A007FFD64 /* FMDatabaseManagerClient.m in Sources */,
 				B770E4F01CBB74890091732C /* BudgetViewController.swift in Sources */,
@@ -511,6 +540,7 @@
 				B770E4EC1CB511AA0091732C /* HomeDateHeaderView.swift in Sources */,
 				B7CC31ED1CE770A8008ABA8D /* MemberModel.swift in Sources */,
 				B770E4E51CB50A490091732C /* HFBaseTableView.swift in Sources */,
+				B76346DD1CE876BC00A9DBF6 /* Luminosity.swift in Sources */,
 				B7482FAE1CDDF144007FFD64 /* GCDBModel.m in Sources */,
 				B7EDDB741C9BD9500023DD9C /* BigAddButton.swift in Sources */,
 				B7CC31E91CE76B68008ABA8D /* MenberManagerViewController.swift in Sources */,
@@ -520,10 +550,12 @@
 				B770E4EA1CB510B30091732C /* HFTableViewCell.swift in Sources */,
 				B770E4EE1CB6033F0091732C /* HomeItemCell.swift in Sources */,
 				B7CC31E31CE5C740008ABA8D /* YoYoAlertView.swift in Sources */,
+				B76346D41CE86E3200A9DBF6 /* ChartStorageService.swift in Sources */,
 				B7CC31E51CE61D3D008ABA8D /* BudgetSetupViewController.swift in Sources */,
 				B7CC31E71CE736BC008ABA8D /* KDProgressExtension.swift in Sources */,
 				B7EE8E371CD78DA900D4193F /* PNBarChart.m in Sources */,
 				B7EDDB6E1C9A87830023DD9C /* HFBaseViewController.swift in Sources */,
+				B76346D21CE85FA700A9DBF6 /* PieChartGroupModel.swift in Sources */,
 				B7482FB51CDDF6B0007FFD64 /* AppEnums.swift in Sources */,
 				B7D00D211CE477F600C62232 /* YoYoInputAlertView.swift in Sources */,
 				B7482FC21CDEE625007FFD64 /* AccountTypeModel.swift in Sources */,

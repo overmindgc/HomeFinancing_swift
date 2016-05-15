@@ -99,6 +99,36 @@
     return modelArray;
 }
 
+//根据model查询分组sum数据
+- (NSArray *)groupSumModelArrayByClass:(Class)modelClass resultClass:(Class)resultClass sumStr:(NSString *)sumStr params:(NSDictionary *)paramDict groupStr:(NSString *)groupStr
+{
+    NSString *sumSql = [self groupSumSqlByModelClass:modelClass sumStr:sumStr params:paramDict groupStr:groupStr];
+    
+    NSArray *resultArray = [self executeQueueQuery:sumSql];
+    
+    NSMutableArray *modelArray = [[NSMutableArray alloc] init];
+    for (NSDictionary *resultDict in resultArray) {
+        GCDBModel *model  = [[resultClass alloc] initWithDict:resultDict];
+        model.sum_result = [resultDict valueForKey:[NSString stringWithFormat:@"SUM(%@)",sumStr]];
+        [modelArray addObject:model];
+    }
+    return modelArray;
+}
+
+//根据model查询sum数据
+- (NSString *)sumModelArrayByClass:(Class)modelClass sumStr:(NSString *)sumStr params:(NSDictionary *)paramDict
+{
+    NSString *sumSql = [self sumSqlByModelClass:modelClass sumStr:sumStr params:paramDict];
+    
+    NSArray *resultArray = [self executeQueueQuery:sumSql];
+    
+    NSString *sumResult;
+    for (NSDictionary *resultDict in resultArray) {
+        sumResult = [resultDict valueForKey:[NSString stringWithFormat:@"SUM(%@)",sumStr]];
+    }
+    return sumResult;
+}
+
 //向表中插入多条Model数据
 - (void)insertToTableWithArray:(NSArray *)modelArray
 {
@@ -243,6 +273,39 @@
     return selectSql;
 }
 
+//根据model和过滤参数字典生成sum语句
+- (NSString *)groupSumSqlByModelClass:(Class)modelClass sumStr:(NSString *)sumStr params:(NSDictionary *)paramDict groupStr:(NSString *)groupStr
+{
+    NSString *table_name = [self tableNameByModel:modelClass];
+    
+    NSString *paramStr = [self paramStrByDict:paramDict];
+    
+    NSString *sumSql;
+    if (paramDict) {
+        sumSql = [NSString stringWithFormat:@"SELECT *,SUM(%@) FROM %@ WHERE %@ GROUP BY %@",sumStr,table_name,paramStr,groupStr];
+    } else {
+        sumSql = [NSString stringWithFormat:@"SELECT *,SUM(%@) FROM %@ GROUP BY %@",sumStr,table_name,groupStr];
+    }
+    
+    return sumSql;
+}
+
+//根据model和过滤参数字典生成sum语句
+- (NSString *)sumSqlByModelClass:(Class)modelClass sumStr:(NSString *)sumStr params:(NSDictionary *)paramDict
+{
+    NSString *table_name = [self tableNameByModel:modelClass];
+    
+    NSString *paramStr = [self paramStrByDict:paramDict];
+    
+    NSString *sumSql;
+    if (paramDict) {
+        sumSql = [NSString stringWithFormat:@"SELECT SUM(%@) FROM %@ WHERE %@ ",sumStr,table_name,paramStr];
+    } else {
+        sumSql = [NSString stringWithFormat:@"SELECT SUM(%@) FROM %@ ",sumStr,table_name];
+    }
+    
+    return sumSql;
+}
 
 //根据model生成insert语句
 - (NSString *)insertSqlByModel:(NSObject *)model

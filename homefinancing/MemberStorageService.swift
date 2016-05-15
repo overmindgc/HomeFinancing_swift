@@ -29,8 +29,12 @@ class MemberStorageService: GCBaseStorage {
     
     internal func getAllMemberList() -> Array<MemberModel> {
         initMemberData()
-        let modelArray = self.selectModelArrayByClass(object_getClass(MemberModel()), params: nil, orderBy: "id", isDesc: false)
-        return modelArray as! Array<MemberModel>
+        let resultArray = self.selectModelArrayByClass(object_getClass(MemberModel()), params: nil, orderBy: "id", isDesc: false)
+        let modelArray = resultArray as! Array<MemberModel>
+        for model in modelArray {
+            model.totalPay = getMemberSumAllPayAmountWithId(model.id!)
+        }
+        return modelArray
     }
     
     internal func saveMemberModel(model:MemberModel) {
@@ -43,5 +47,9 @@ class MemberStorageService: GCBaseStorage {
     
     internal func deleteMemberWithId(memberId:String) {
         self.deleteFromTableByClass(object_getClass(MemberModel()), params: ["id":memberId])
+    }
+    
+    internal func getMemberSumAllPayAmountWithId(memberId:String) -> String? {
+       return self.sumModelArrayByClass(object_getClass(AccountModel()), sumStr: "amount", params: ["memberId":memberId,"payOrIncome":"pay"])
     }
 }

@@ -254,6 +254,9 @@ class HomeViewController: HFBaseViewController,UITableViewDelegate,UITableViewDa
             if currentMonthOffset == 0 {
                 budgetVC.isNowMonth = true
             }
+        } else if segue.identifier == "pieChartShow" {
+            let pieChartVC = segue.destinationViewController as! PieChartStatisticViewController
+            pieChartVC.currentMonthStr = currentSearchMonthStr
         }
     }
     

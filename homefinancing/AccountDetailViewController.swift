@@ -32,7 +32,7 @@ class AccountDetailViewController: HFBaseViewController {
         }
         typeLabel.text = payOrIncomeText! + " > " + (currentAccountModel?.typeName)!
         dateLabel.text = (currentAccountModel?.accountDate)!
-        menberLabel.text = (currentAccountModel?.menberName)!
+        menberLabel.text = (currentAccountModel?.memberName)!
         if currentAccountModel?.remark != "" {
             remarkLabel.text = (currentAccountModel?.remark)!
         } else {

@@ -10,6 +10,9 @@
 
 @interface GCDBModel : NSObject
 
+/**用于存放sum值*/
+@property (nonatomic,copy) NSString *sum_result;
+
 /**根据字典匹配赋值给属性*/
 - (id)initWithDict:(NSDictionary *)dictionary;
 

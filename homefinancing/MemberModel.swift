@@ -9,4 +9,5 @@
 class MemberModel: GCDBModel {
     var id:String?
     var name:String?
+    var totalPay:String?
 }

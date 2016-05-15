@@ -64,6 +64,16 @@ extension NSDate {
         return formatter.stringFromDate(originDate!)
     }
     
+    static func yearStringWithStandardFormat(date:NSDate?) -> String {
+        var originDate = date
+        if date == nil {
+            originDate = NSDate()
+        }
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy"
+        return formatter.stringFromDate(originDate!)
+    }
+    
     static func monthDayStringWithStandardFormat(date:NSDate?) -> String {
         var originDate = date
         if date == nil {

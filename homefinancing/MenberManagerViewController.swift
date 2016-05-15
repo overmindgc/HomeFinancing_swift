@@ -40,6 +40,11 @@ class MenberManagerViewController: HFBaseViewController,UITableViewDelegate,UITa
         let memberModel = tableSource[row]
         itemCell.memberModel = memberModel
         itemCell.editClosure = editMember
+        if memberModel.totalPay != nil {
+            itemCell.payAmountLabel?.text = "累计消费：" + memberModel.totalPay!
+        } else {
+            itemCell.payAmountLabel?.text = "累计消费：0"
+        }
         return itemCell
     }
     

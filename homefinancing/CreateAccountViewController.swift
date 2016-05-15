@@ -38,6 +38,8 @@ class CreateAccountViewController: HFBaseViewController {
     var currentMemberId:String?
     var currentMemberName:String?
     
+    var memberModelArray:Array<MemberModel>?
+    
     override func viewDidLoad() {
         dateButton.layer.borderWidth = 1
         dateButton.layer.borderColor = UIColor.whiteColor().CGColor
@@ -60,14 +62,15 @@ class CreateAccountViewController: HFBaseViewController {
         if originAccountModel != nil {
             currentSelectDate = NSDate.dateWithStandardFormatString(originAccountModel?.accountDate)
             currentRemarkText = originAccountModel?.remark
-            currentMemberId = originAccountModel?.menberId
-            currentMemberName = originAccountModel?.menberName
+            currentMemberId = originAccountModel?.memberId
+            currentMemberName = originAccountModel?.memberName
+            menberButton.setTitle(currentMemberName, forState: UIControlState.Normal)
             currentResult = originAccountModel?.amount
             numPadView?.changeTopBarLabelText((originAccountModel?.typeName!)!, type: AccountType(rawValue: (originAccountModel?.payOrIncome)!)!)
             numPadView?.setAmountResultText(currentResult!)
         } else {
             currentSelectDate = nowDate
-            currentMemberId = "001"
+            currentMemberId = "1001"
             currentMemberName = "全家"
         }
         self.dateButton.setTitle(NSDate.monthDayStringWithStandardFormat(currentSelectDate), forState: UIControlState.Normal)
@@ -186,12 +189,13 @@ class CreateAccountViewController: HFBaseViewController {
             accountModel.bookId = "1"
             accountModel.accountDate = NSDate.dateDayStringWithStandardFormat(currentSelectDate)
             accountModel.accountMonthDate = NSDate.yearMonthStringWithStandardFormat(currentSelectDate)
+            accountModel.accountYearDate = NSDate.yearStringWithStandardFormat(currentSelectDate)
             accountModel.updateDate = NSDate.dateFullStringWithStandardFormat(nowDate)
             accountModel.typeId = currentSelectTypeButton?.buttonId
             accountModel.typeName = currentSelectTypeButton?.buttonTitle
             accountModel.amount = currentResult
-            accountModel.menberId = "001"
-            accountModel.menberName = "全家"
+            accountModel.memberId = currentMemberId
+            accountModel.memberName = currentMemberName
             accountModel.remark = currentRemarkText
             if currentSelectTypeButton?.accountType == AccountType.pay {
                 accountModel.payOrIncome = String(AccountType.pay)
@@ -261,7 +265,10 @@ class CreateAccountViewController: HFBaseViewController {
     
     func selectMemberClick(sender: AnyObject)
     {
-        
+        let item:KxMenuItem = sender as! KxMenuItem
+        currentMemberId = item.itemId
+        currentMemberName = item.title
+        menberButton.setTitle(currentMemberName, forState: UIControlState.Normal)
     }
     
     // MARK: - actions
@@ -275,11 +282,18 @@ class CreateAccountViewController: HFBaseViewController {
     }
     
     @IBAction func selectMemberAction(sender: AnyObject) {
+        memberModelArray = MemberStorageService.sharedInstance.getAllMemberList()
+        let allMemberModel:MemberModel = MemberModel()
+        allMemberModel.id = "1001"
+        allMemberModel.name = "全家"
+        memberModelArray?.insert(allMemberModel, atIndex: 0)
+        
         //配置零：内容配置
-        let menuArray = [KxMenuItem.init("全家", image: UIImage(named: "person_small"), target: self, action: #selector(self.selectMemberClick(_:))),
-                         KxMenuItem.init("爸爸", image: UIImage(named: "person_small"), target: self, action: #selector(self.selectMemberClick(_:))),
-                         KxMenuItem.init("妈妈", image: UIImage(named: "person_small"), target: self, action: #selector(self.selectMemberClick(_:))),
-                         KxMenuItem.init("孩子", image: UIImage(named: "person_small"), target: self, action: #selector(self.selectMemberClick(_:)))]
+        var menuArray:Array<KxMenuItem> = []
+        for memberModel in memberModelArray! {
+            let menuItem = KxMenuItem.init(memberModel.name,itemId: memberModel.id , image: UIImage(named: "person_small"), target: self, action: #selector(self.selectMemberClick(_:)))
+            menuArray.append(menuItem)
+        }
         
         //配置一：基础配置
         KxMenu.setTitleFont(UIFont.systemFontOfSize(15))
