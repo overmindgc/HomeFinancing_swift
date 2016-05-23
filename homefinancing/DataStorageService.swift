@@ -34,7 +34,7 @@ class DataStorageService: GCBaseStorage {
     // MARK: - typeList
     internal func getAccountTypeList(type:AccountType) -> Array<AccountTypeModel> {
         
-        var typeArray:Array<AccountTypeModel> = []
+        var typeArray = [AccountTypeModel]()
         
         if type == AccountType.pay {
             for payDict in DataStorageService.payTypeArray {

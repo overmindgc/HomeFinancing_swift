@@ -19,7 +19,7 @@ class HomeViewController: HFBaseViewController,UITableViewDelegate,UITableViewDa
     @IBOutlet weak var topPercentLabel: UILabel!
     @IBOutlet weak var topCnDateView: UILabel!
     
-    var tableSource:Array<AccountGroupStruct> = []
+    var tableSource = [AccountGroupStruct]()
     
     var progress:KDCircularProgress!
     

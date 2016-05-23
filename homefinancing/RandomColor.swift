@@ -72,8 +72,8 @@ public func randomColor(hue hue: Hue = .Random, luminosity: Luminosity = .Random
         return Int(arc4random_uniform(UInt32(range.max - range.min))) + range.min
     }
     
-    func getColorDefinition(var hueValue: Int) -> ColorDefinition {
-        
+    func getColorDefinition(hueV: Int) -> ColorDefinition {
+        var hueValue = hueV
         if hueValue >= 334 && hueValue <= 360 {
             hueValue -= 360
         }
@@ -102,8 +102,8 @@ public func randomColor(hue hue: Hue = .Random, luminosity: Luminosity = .Random
         return hueValue
     }
     
-    func pickSaturation(var color: ColorDefinition, hue: Hue, luminosity: Luminosity) -> Int {
-        
+    func pickSaturation(c: ColorDefinition, hue: Hue, luminosity: Luminosity) -> Int {
+        var color = c
         if luminosity == .Random {
             return randomWithin((0, 100))
         }
@@ -129,7 +129,7 @@ public func randomColor(hue hue: Hue = .Random, luminosity: Luminosity = .Random
         return randomWithin((sMin, sMax))
     }
     
-    func pickBrightness(var color: ColorDefinition, saturationValue: Int, luminosity: Luminosity) -> Int {
+    func pickBrightness(color: ColorDefinition, saturationValue: Int, luminosity: Luminosity) -> Int {
  
         func getMinimumBrightness(saturationValue: Int) -> Int {
             var lowerBounds = color.lowerBounds;

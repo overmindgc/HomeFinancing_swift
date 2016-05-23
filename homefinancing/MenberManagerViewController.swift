@@ -12,7 +12,7 @@ class MenberManagerViewController: HFBaseViewController,UITableViewDelegate,UITa
     
     @IBOutlet weak var tableView: HFBaseTableView!
     
-    var tableSource:Array<MemberModel> = []
+    var tableSource = [MemberModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

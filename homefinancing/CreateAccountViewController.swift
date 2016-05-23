@@ -308,8 +308,8 @@ class CreateAccountViewController: HFBaseViewController {
             shadowOfMenu: false,  //是否添加菜单阴影
             hasSeperatorLine: true,  //是否设置分割线
             seperatorLineHasInsets: false,  //是否在分割线两侧留下Insets
-            textColor: Color(R: 0.5, G: 0.5, B: 0.5),  //menuItem字体颜色
-            menuBackgroundColor: Color(R: 1, G: 1, B: 1)  //菜单的底色
+            textColor: KxColor(R: 0.5, G: 0.5, B: 0.5),  //menuItem字体颜色
+            menuBackgroundColor: KxColor(R: 1, G: 1, B: 1)  //菜单的底色
         )
         
         

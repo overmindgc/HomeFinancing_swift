@@ -761,6 +761,26 @@
             </objects>
             <point key="canvasLocation" x="650" y="1296"/>
         </scene>
+        <!--Line Chart Statistic View Controller-->
+        <scene sceneID="k0z-Kf-l73">
+            <objects>
+                <viewController id="YuQ-3W-rc7" customClass="LineChartStatisticViewController" customModule="homefinancing" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EDM-Jd-AAd"/>
+                        <viewControllerLayoutGuide type="bottom" id="aP5-qy-q63"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pKt-ob-qgR">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5AM-RM-DPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1058" y="1296"/>
+        </scene>
         <!--明细-->
         <scene sceneID="Y0r-F5-itl">
             <objects>

@@ -32,7 +32,7 @@ typedef struct{
     CGFloat G;
     CGFloat B;
 
-}Color;
+}KxColor;
 
 typedef struct {
     CGFloat arrowSize;
@@ -44,8 +44,8 @@ typedef struct {
     Boolean shadowOfMenu;
     Boolean hasSeperatorLine;
     Boolean seperatorLineHasInsets;
-    Color textColor;
-    Color menuBackgroundColor;
+    KxColor textColor;
+    KxColor menuBackgroundColor;
     
 }OptionalConfiguration;
 

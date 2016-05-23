@@ -17,7 +17,7 @@ class MemberStorageService: GCBaseStorage {
     
     internal func initMemberData() {
         if NSUserDefaults.hasInitMemberData() == false {
-            var modelArray:Array<MemberModel> = []
+            var modelArray = [MemberModel]()
             for memberDict:Dictionary in defaultMemberArray {
                 let memberModel:MemberModel = MemberModel(dict: memberDict)
                 modelArray.append(memberModel)
