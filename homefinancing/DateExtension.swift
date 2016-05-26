@@ -24,6 +24,14 @@ extension NSDate {
         return originDate!.dateByAddingTimeInterval(Double(offsetDay) * 30 * 24 * 3600)
     }
     
+    static func dateByOffsetYear(date:NSDate?,offsetDay:Int) -> NSDate {
+        var originDate = date
+        if date == nil {
+            originDate = NSDate()
+        }
+        return originDate!.dateByAddingTimeInterval(Double(offsetDay) * 365 * 24 * 3600)
+    }
+    
     static func dateWithStandardFormatString(dateString:String?) -> NSDate {
         if dateString == nil {
             return NSDate()

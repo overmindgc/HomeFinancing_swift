@@ -14,6 +14,8 @@
 		7B169A111C780A6F008F850C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B169A101C780A6F008F850C /* HomeViewController.swift */; };
 		7B169A1D1C78699B008F850C /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B169A1C1C78699B008F850C /* AppColor.swift */; };
 		7B6254C01CE381200037946A /* AppNotificationConts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6254BF1CE381200037946A /* AppNotificationConts.swift */; };
+		B737EA201CF6B5B000D26920 /* LineChartTableSourceStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737EA1F1CF6B5B000D26920 /* LineChartTableSourceStruct.swift */; };
+		B737EA241CF6C32100D26920 /* LineChartTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737EA231CF6C32100D26920 /* LineChartTableCell.swift */; };
 		B73A18E91CE30ED80089C6B1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A18E81CE30ED80089C6B1 /* StringExtension.swift */; };
 		B73A18ED1CE31D280089C6B1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A18EC1CE31D280089C6B1 /* DateExtension.swift */; };
 		B73A18EF1CE32CC30089C6B1 /* AccountGroupStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73A18EE1CE32CC30089C6B1 /* AccountGroupStruct.swift */; };
@@ -90,6 +92,8 @@
 		7B169A101C780A6F008F850C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7B169A1C1C78699B008F850C /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		7B6254BF1CE381200037946A /* AppNotificationConts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotificationConts.swift; sourceTree = "<group>"; };
+		B737EA1F1CF6B5B000D26920 /* LineChartTableSourceStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartTableSourceStruct.swift; sourceTree = "<group>"; };
+		B737EA231CF6C32100D26920 /* LineChartTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartTableCell.swift; sourceTree = "<group>"; };
 		B73A18E81CE30ED80089C6B1 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B73A18EC1CE31D280089C6B1 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		B73A18EE1CE32CC30089C6B1 /* AccountGroupStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountGroupStruct.swift; sourceTree = "<group>"; };
@@ -275,6 +279,7 @@
 				B73A18EE1CE32CC30089C6B1 /* AccountGroupStruct.swift */,
 				B7CC31EC1CE770A8008ABA8D /* MemberModel.swift */,
 				B76346D11CE85FA700A9DBF6 /* PieChartGroupModel.swift */,
+				B737EA1F1CF6B5B000D26920 /* LineChartTableSourceStruct.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -394,9 +399,9 @@
 				B7D00D221CE5854100C62232 /* AccountDetailViewController.swift */,
 				B770E4EF1CBB74890091732C /* BudgetViewController.swift */,
 				B7CC31E41CE61D3D008ABA8D /* BudgetSetupViewController.swift */,
-				B7EE8E0E1CD781E000D4193F /* PieChartStatisticViewController.swift */,
 				B7482FBB1CDE2CB4007FFD64 /* CreateAccountViewController.swift */,
 				B7CC31E81CE76B68008ABA8D /* MenberManagerViewController.swift */,
+				B7EE8E0E1CD781E000D4193F /* PieChartStatisticViewController.swift */,
 				B76346DE1CEC071D00A9DBF6 /* LineChartStatisticViewController.swift */,
 			);
 			name = Sections;
@@ -432,6 +437,7 @@
 				B770E4ED1CB6033F0091732C /* HomeItemCell.swift */,
 				B7CC31EA1CE76C4B008ABA8D /* MemberTableCell.swift */,
 				B76346CB1CE779B100A9DBF6 /* MemberAddButton.swift */,
+				B737EA231CF6C32100D26920 /* LineChartTableCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -523,6 +529,7 @@
 				B7EE8E3E1CD78DA900D4193F /* PNLineChartDataItem.m in Sources */,
 				B7EE8E361CD78DA900D4193F /* PNBar.m in Sources */,
 				B7482FBA1CDE0165007FFD64 /* NSUserDefaultsExtension.swift in Sources */,
+				B737EA241CF6C32100D26920 /* LineChartTableCell.swift in Sources */,
 				7B6254C01CE381200037946A /* AppNotificationConts.swift in Sources */,
 				B7D00D061CE4228200C62232 /* DatePickerDialog.swift in Sources */,
 				B76346D91CE876B300A9DBF6 /* Hue.swift in Sources */,
@@ -574,6 +581,7 @@
 				B7EE8E481CD7986700D4193F /* UIBarExtension.swift in Sources */,
 				B7482F9E1CDDEF13007FFD64 /* FMDatabaseAdditions.m in Sources */,
 				B76346CE1CE77E1F00A9DBF6 /* MemberStorageService.swift in Sources */,
+				B737EA201CF6B5B000D26920 /* LineChartTableSourceStruct.swift in Sources */,
 				B7482FA11CDDEF13007FFD64 /* FMResultSet.m in Sources */,
 				B7D00D231CE5854100C62232 /* AccountDetailViewController.swift in Sources */,
 				B7EE8E3F1CD78DA900D4193F /* PNPieChart.m in Sources */,

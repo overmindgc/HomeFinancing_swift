@@ -50,6 +50,6 @@ class MemberStorageService: GCBaseStorage {
     }
     
     internal func getMemberSumAllPayAmountWithId(memberId:String) -> String? {
-       return self.sumModelArrayByClass(object_getClass(AccountModel()), sumStr: "amount", params: ["memberId":memberId,"payOrIncome":"pay"])
+       return self.sumResultByClass(object_getClass(AccountModel()), sumStr: "amount", params: ["memberId":memberId,"payOrIncome":"pay"])
     }
 }

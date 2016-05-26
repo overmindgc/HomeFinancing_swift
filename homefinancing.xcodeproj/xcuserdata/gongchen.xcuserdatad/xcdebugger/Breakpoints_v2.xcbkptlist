@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homefinancing/GCBaseStorage.m"
-            timestampString = "484996182.118267"
+            timestampString = "485925080.462514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "-tableNameByModel:"
             landmarkType = "5">
          </BreakpointContent>
@@ -506,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homefinancing/GCBaseStorage.m"
-            timestampString = "484996182.118267"
+            timestampString = "485925080.462514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "425"
-            endingLineNumber = "425"
+            startingLineNumber = "456"
+            endingLineNumber = "456"
             landmarkName = "-executeNonQuery:arg:"
             landmarkType = "5">
          </BreakpointContent>
@@ -644,11 +644,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homefinancing/DateExtension.swift"
-            timestampString = "484996182.118267"
+            timestampString = "485942472.584199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "yearMonthCnStringWithStandardFormat(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -660,11 +660,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homefinancing/HomeViewController.swift"
-            timestampString = "485013014.263317"
+            timestampString = "485939542.244974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
             landmarkName = "lastMonthAction(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -900,11 +900,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homefinancing/GCBaseStorage.m"
-            timestampString = "484996182.118267"
+            timestampString = "485925080.462514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
             landmarkName = "-selectSqlByModelClass:params:orderBy:isDesc:limitStartLine:perSize:"
             landmarkType = "5">
          </BreakpointContent>
@@ -948,12 +948,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homefinancing/GCBaseStorage.m"
-            timestampString = "484996182.118267"
+            timestampString = "485925080.462514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "-sumModelArrayByClass:sumStr:params:"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "-sumResultByClass:sumStr:params:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -964,12 +964,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homefinancing/GCBaseStorage.m"
-            timestampString = "484996182.118267"
+            timestampString = "485925080.462514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "-sumModelArrayByClass:sumStr:params:"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "-sumResultByClass:sumStr:params:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -980,11 +980,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homefinancing/GCBaseStorage.m"
-            timestampString = "484996182.118267"
+            timestampString = "485925080.462514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "408"
-            endingLineNumber = "408"
+            startingLineNumber = "439"
+            endingLineNumber = "439"
             landmarkName = "-executeQueueQuery:"
             landmarkType = "5">
          </BreakpointContent>
@@ -996,11 +996,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homefinancing/GCBaseStorage.m"
-            timestampString = "484996182.118267"
+            timestampString = "485925080.462514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "409"
-            endingLineNumber = "409"
+            startingLineNumber = "440"
+            endingLineNumber = "440"
             landmarkName = "-executeQueueQuery:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1012,12 +1012,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homefinancing/GCBaseStorage.m"
-            timestampString = "484996182.118267"
+            timestampString = "485925080.462514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "-sumModelArrayByClass:sumStr:params:"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "-sumResultByClass:sumStr:params:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1028,12 +1028,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homefinancing/GCBaseStorage.m"
-            timestampString = "484996182.118267"
+            timestampString = "485925080.462514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "-sumModelArrayByClass:sumStr:params:"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "-sumResultByClass:sumStr:params:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1044,11 +1044,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homefinancing/GCBaseStorage.m"
-            timestampString = "484996182.118267"
+            timestampString = "485925080.462514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
             landmarkName = "-sumSqlByModelClass:sumStr:params:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1060,11 +1060,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homefinancing/PieChartStatisticViewController.swift"
-            timestampString = "485013014.263317"
+            timestampString = "485942472.584199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1076,11 +1076,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homefinancing/PieChartStatisticViewController.swift"
-            timestampString = "485013014.263317"
+            timestampString = "485942472.584199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "refreshChartData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1092,11 +1092,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homefinancing/PieChartStatisticViewController.swift"
-            timestampString = "485013014.263317"
+            timestampString = "485942472.584199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "refreshChartData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1124,12 +1124,188 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "homefinancing/PieChartStatisticViewController.swift"
-            timestampString = "485013014.263317"
+            timestampString = "485942472.584199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "refreshChartData()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homefinancing/ChartStorageService.swift"
+            timestampString = "485925106.026113"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "getLineChartTopStatisticData(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homefinancing/ChartStorageService.swift"
+            timestampString = "485930184.96065"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getLineChartTopStatisticData(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homefinancing/GCBaseStorage.m"
+            timestampString = "485925389.238467"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "-sumResultByClass:sumStr:params:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homefinancing/ChartStorageService.swift"
+            timestampString = "485930184.96065"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "getLineChartTopStatisticData(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homefinancing/ChartStorageService.swift"
+            timestampString = "485933495.32021"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "getLineChartTableSource(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homefinancing/LineChartStatisticViewController.swift"
+            timestampString = "485934811.176212"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "refreshChartData(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homefinancing/LineChartStatisticViewController.swift"
+            timestampString = "485934916.418605"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homefinancing/LineChartStatisticViewController.swift"
+            timestampString = "485934968.926172"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "tableView(_:viewForHeaderInSection:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homefinancing/PieChartStatisticViewController.swift"
+            timestampString = "485942472.584199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "userClickedOnPieIndexItem(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homefinancing/PieChartStatisticViewController.swift"
+            timestampString = "485942472.584199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "userClickedOnPieIndexItem(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "homefinancing/PieChartStatisticViewController.swift"
+            timestampString = "485942604.754506"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "lastClickAction(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

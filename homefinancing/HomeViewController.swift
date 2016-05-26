@@ -257,6 +257,7 @@ class HomeViewController: HFBaseViewController,UITableViewDelegate,UITableViewDa
         } else if segue.identifier == "pieChartShow" {
             let pieChartVC = segue.destinationViewController as! PieChartStatisticViewController
             pieChartVC.currentMonthStr = currentSearchMonthStr
+            pieChartVC.currentMonthOffset = currentMonthOffset
         }
     }
     

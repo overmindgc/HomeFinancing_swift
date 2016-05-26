@@ -99,6 +99,20 @@
     return modelArray;
 }
 
+//根据model查询avg数据
+- (NSString *)avgResultByClass:(Class)modelClass avgStr:(NSString *)avgStr params:(NSDictionary *)paramDict
+{
+    NSString *avgSql = [self avgSqlByModelClass:modelClass avgStr:avgStr params:paramDict];
+    
+    NSArray *resultArray = [self executeQueueQuery:avgSql];
+    
+    NSString *avgResult;
+    for (NSDictionary *resultDict in resultArray) {
+        avgResult = [resultDict valueForKey:[NSString stringWithFormat:@"AVG(%@)",avgStr]];
+    }
+    return avgResult;
+}
+
 //根据model查询分组sum数据
 - (NSArray *)groupSumModelArrayByClass:(Class)modelClass resultClass:(Class)resultClass sumStr:(NSString *)sumStr params:(NSDictionary *)paramDict groupStr:(NSString *)groupStr
 {
@@ -116,7 +130,7 @@
 }
 
 //根据model查询sum数据
-- (NSString *)sumModelArrayByClass:(Class)modelClass sumStr:(NSString *)sumStr params:(NSDictionary *)paramDict
+- (NSString *)sumResultByClass:(Class)modelClass sumStr:(NSString *)sumStr params:(NSDictionary *)paramDict
 {
     NSString *sumSql = [self sumSqlByModelClass:modelClass sumStr:sumStr params:paramDict];
     
@@ -305,6 +319,23 @@
     }
     
     return sumSql;
+}
+
+//根据model和过滤参数字典生成avg语句
+- (NSString *)avgSqlByModelClass:(Class)modelClass avgStr:(NSString *)avgStr params:(NSDictionary *)paramDict
+{
+    NSString *table_name = [self tableNameByModel:modelClass];
+    
+    NSString *paramStr = [self paramStrByDict:paramDict];
+    
+    NSString *avgSql;
+    if (paramDict) {
+        avgSql = [NSString stringWithFormat:@"SELECT AVG(%@) FROM %@ WHERE %@ ",avgStr,table_name,paramStr];
+    } else {
+        avgSql = [NSString stringWithFormat:@"SELECT AVG(%@) FROM %@ ",avgStr,table_name];
+    }
+    
+    return avgSql;
 }
 
 //根据model生成insert语句

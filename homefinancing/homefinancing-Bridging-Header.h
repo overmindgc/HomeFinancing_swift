@@ -8,6 +8,9 @@
 
 #import "PNPieChart.h"
 #import "PNPieChartDataItem.h"
+#import "PNLineChart.h"
+#import "PNLineChartData.h"
+#import "PNLineChartDataItem.h"
 #import "GCBaseStorage.h"
 #import "GCDBModel.h"
 #import "NirKxMenu.h"
