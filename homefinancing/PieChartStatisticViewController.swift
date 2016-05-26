@@ -83,7 +83,7 @@ class PieChartStatisticViewController: UIViewController,PNChartDelegate {
             paramYear = nil
         } else {
             let threeYearTuple = threeYearStrBycurrMonthStr(currentMonthStr!)
-            self.navigationItem.title = threeYearTuple.current + "分布统计"
+            self.navigationItem.title = threeYearTuple.current + "年分布统计"
             lastButton.setTitle(threeYearTuple.last, forState: UIControlState.Normal)
             nextButton.setTitle(threeYearTuple.next, forState: UIControlState.Normal)
             paramMonth = nil
