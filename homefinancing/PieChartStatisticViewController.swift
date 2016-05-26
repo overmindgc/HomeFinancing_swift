@@ -91,6 +91,9 @@ class PieChartStatisticViewController: UIViewController,PNChartDelegate {
             paramYear = currentYearStr
         }
         
+        let leftStr = ChartStorageService.sharedInstance.getPieChartLeftData(paramMonth, yearStr: paramYear)
+        leftAmountLabel.text = "￥" + leftStr
+        
         var payOrIncome:String?
         if payIncomeSegmemted.selectedSegmentIndex == 0 {
             payOrIncome = String(AccountType.pay)

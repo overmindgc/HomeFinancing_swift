@@ -33,6 +33,36 @@ class ChartStorageService: GCBaseStorage {
         return (resultArray,maxModel);
     }
     
+    internal func getPieChartLeftData(monthStr:String?,yearStr:String?) -> String {
+        var paramDict:Dictionary<String,String> = Dictionary()
+        
+        if monthStr != nil {
+            paramDict["accountMonthDate"] = monthStr
+        }
+        if yearStr != nil {
+            paramDict["accountYearDate"] = yearStr
+        }
+        
+        paramDict["payOrIncome"] = String(AccountType.pay)
+        
+        var sumPayStr:String? = self.sumResultByClass(object_getClass(AccountModel()), sumStr: "amount", params: paramDict)
+        if sumPayStr == nil {
+            sumPayStr = "0"
+        }
+        
+        paramDict["payOrIncome"] = String(AccountType.income)
+        
+        var sumIncomeStr:String? = self.sumResultByClass(object_getClass(AccountModel()), sumStr: "amount", params: paramDict)
+        
+        if sumIncomeStr == nil {
+            sumIncomeStr = "0"
+        }
+
+        let leftStr = String(Int(sumIncomeStr!)! - Int(sumPayStr!)!)
+        
+        return leftStr;
+    }
+    
     internal func getLineChartTopStatisticData(yearStr:String?) -> (payAvg:String,incomeAvg:String,yearLeft:String) {
         var paramDict:Dictionary<String,String> = Dictionary()
         if yearStr != nil {

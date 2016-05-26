@@ -53,6 +53,7 @@ class DataStorageService: GCBaseStorage {
     
     // MARK: - add
     internal func addAccountToDatabase(accountModel:AccountModel) {
+        self.deleteAccountWithId(accountModel.id!)
         self.insertToTableWithModel(accountModel)
     }
     
