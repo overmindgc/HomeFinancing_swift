@@ -10,11 +10,6 @@ class MemberStorageService: GCBaseStorage {
     static let sharedInstance = MemberStorageService()
     private override init() {}
     
-    let defaultMemberArray = [["id":"1002","name":"爸爸"],
-                              ["id":"1003","name":"妈妈"],
-                              ["id":"1004","name":"孩子"]]
-    
-    
     internal func initMemberData() {
         if NSUserDefaults.hasInitMemberData() == false {
             var modelArray = [MemberModel]()

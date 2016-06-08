@@ -68,6 +68,7 @@
 		B7D00D231CE5854100C62232 /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D00D221CE5854100C62232 /* AccountDetailViewController.swift */; };
 		B7EDDB6E1C9A87830023DD9C /* HFBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EDDB6D1C9A87830023DD9C /* HFBaseViewController.swift */; };
 		B7EDDB741C9BD9500023DD9C /* BigAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EDDB731C9BD9500023DD9C /* BigAddButton.swift */; };
+		B7EE612F1CFFDF12007BE62B /* InitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE612E1CFFDF12007BE62B /* InitData.swift */; };
 		B7EE8E0F1CD781E000D4193F /* PieChartStatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE8E0E1CD781E000D4193F /* PieChartStatisticViewController.swift */; };
 		B7EE8E361CD78DA900D4193F /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EE8E151CD78DA900D4193F /* PNBar.m */; };
 		B7EE8E371CD78DA900D4193F /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EE8E171CD78DA900D4193F /* PNBarChart.m */; };
@@ -157,6 +158,7 @@
 		B7D00D221CE5854100C62232 /* AccountDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
 		B7EDDB6D1C9A87830023DD9C /* HFBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HFBaseViewController.swift; sourceTree = "<group>"; };
 		B7EDDB731C9BD9500023DD9C /* BigAddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigAddButton.swift; sourceTree = "<group>"; };
+		B7EE612E1CFFDF12007BE62B /* InitData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitData.swift; sourceTree = "<group>"; };
 		B7EE8E0E1CD781E000D4193F /* PieChartStatisticViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartStatisticViewController.swift; sourceTree = "<group>"; };
 		B7EE8E101CD782A000D4193F /* homefinancing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "homefinancing-Bridging-Header.h"; sourceTree = "<group>"; };
 		B7EE8E141CD78DA900D4193F /* PNBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBar.h; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 		B7EDDB701C9BD8820023DD9C /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				B7EE612D1CFFDEED007BE62B /* InitData */,
 				B7EE8E461CD7984A00D4193F /* Extension */,
 				B770E4DF1CB502160091732C /* Consts */,
 				B7EDDB6C1C9A875F0023DD9C /* Base */,
@@ -440,6 +443,14 @@
 				B737EA231CF6C32100D26920 /* LineChartTableCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		B7EE612D1CFFDEED007BE62B /* InitData */ = {
+			isa = PBXGroup;
+			children = (
+				B7EE612E1CFFDF12007BE62B /* InitData.swift */,
+			);
+			name = InitData;
 			sourceTree = "<group>";
 		};
 		B7EE8E461CD7984A00D4193F /* Extension */ = {
@@ -542,6 +553,7 @@
 				B76346CC1CE779B100A9DBF6 /* MemberAddButton.swift in Sources */,
 				B76346D71CE876A400A9DBF6 /* RandomColor.swift in Sources */,
 				7B169A1D1C78699B008F850C /* AppColor.swift in Sources */,
+				B7EE612F1CFFDF12007BE62B /* InitData.swift in Sources */,
 				B76346DB1CE876B700A9DBF6 /* ColorDefinition.swift in Sources */,
 				B7EE8E3D1CD78DA900D4193F /* PNLineChartData.m in Sources */,
 				B7482FA71CDDEF5A007FFD64 /* FMDatabaseManagerClient.m in Sources */,

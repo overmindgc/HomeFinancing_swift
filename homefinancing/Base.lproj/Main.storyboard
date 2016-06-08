@@ -138,9 +138,9 @@
                                 <rect key="frame" x="-4" y="465" width="328" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7f-9V-Mha">
-                                        <rect key="frame" x="25" y="4" width="60" height="20"/>
+                                        <rect key="frame" x="5" y="4" width="110" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="iEv-gh-lRw"/>
+                                            <constraint firstAttribute="width" constant="110" id="iEv-gh-lRw"/>
                                             <constraint firstAttribute="height" constant="20" id="lvg-IM-tD3"/>
                                         </constraints>
                                         <state key="normal" image="pie"/>
@@ -149,21 +149,21 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分布" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJ6-sI-4NO">
-                                        <rect key="frame" x="44" y="24" width="22" height="14"/>
+                                        <rect key="frame" x="49" y="24" width="22" height="14"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                         <color key="textColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月趋势" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiG-y1-8YT">
-                                        <rect key="frame" x="257" y="24" width="33" height="14"/>
+                                        <rect key="frame" x="252" y="24" width="33" height="14"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                         <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvU-zx-ohc">
-                                        <rect key="frame" x="243" y="4" width="60" height="20"/>
+                                        <rect key="frame" x="213" y="4" width="110" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="3To-GQ-5lN"/>
+                                            <constraint firstAttribute="width" constant="110" id="3To-GQ-5lN"/>
                                             <constraint firstAttribute="height" constant="20" id="Smy-eN-m04"/>
                                         </constraints>
                                         <state key="normal" image="line"/>
@@ -174,13 +174,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.97664974865160492" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="y7f-9V-Mha" firstAttribute="leading" secondItem="Gxt-gf-shh" secondAttribute="leading" constant="25" id="FL8-2g-CwY"/>
+                                    <constraint firstItem="y7f-9V-Mha" firstAttribute="leading" secondItem="Gxt-gf-shh" secondAttribute="leading" constant="5" id="FL8-2g-CwY"/>
                                     <constraint firstItem="yJ6-sI-4NO" firstAttribute="top" secondItem="y7f-9V-Mha" secondAttribute="bottom" id="Kyz-6m-HoV"/>
                                     <constraint firstItem="lvU-zx-ohc" firstAttribute="top" secondItem="Gxt-gf-shh" secondAttribute="top" constant="4" id="MiH-aV-s2z"/>
                                     <constraint firstAttribute="height" constant="40" id="RGG-B1-o4I"/>
                                     <constraint firstItem="yJ6-sI-4NO" firstAttribute="centerX" secondItem="y7f-9V-Mha" secondAttribute="centerX" id="Yh2-5o-gB0"/>
                                     <constraint firstItem="SiG-y1-8YT" firstAttribute="centerX" secondItem="lvU-zx-ohc" secondAttribute="centerX" id="bqp-g9-YhB"/>
-                                    <constraint firstAttribute="trailing" secondItem="lvU-zx-ohc" secondAttribute="trailing" constant="25" id="cwJ-Ad-Tjh"/>
+                                    <constraint firstAttribute="trailing" secondItem="lvU-zx-ohc" secondAttribute="trailing" constant="5" id="cwJ-Ad-Tjh"/>
                                     <constraint firstItem="y7f-9V-Mha" firstAttribute="top" secondItem="Gxt-gf-shh" secondAttribute="top" constant="4" id="lhR-S1-VhU"/>
                                     <constraint firstItem="SiG-y1-8YT" firstAttribute="top" secondItem="lvU-zx-ohc" secondAttribute="bottom" id="mhe-GJ-ILP"/>
                                 </constraints>
@@ -343,6 +343,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bottomBgView" destination="Gxt-gf-shh" id="k1l-4F-BwF"/>
                         <outlet property="incomeLabel" destination="rUq-sh-k6M" id="oQa-D8-cI8"/>
                         <outlet property="payLabel" destination="f8e-YV-lN3" id="4GV-cr-B20"/>
                         <outlet property="surplusLabel" destination="inG-pF-c1Z" id="TpN-Pw-OBr"/>

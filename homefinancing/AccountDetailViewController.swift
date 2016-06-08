@@ -56,7 +56,9 @@ class AccountDetailViewController: HFBaseViewController {
         let sb = UIStoryboard(name:"Main", bundle: nil)
         let createVC = sb.instantiateViewControllerWithIdentifier("createAccountVC") as! CreateAccountViewController
         createVC.originAccountModel = currentAccountModel
-        self.presentViewController(createVC, animated: true, completion: {})
+        self.presentViewController(createVC, animated: true, completion: {
+            self.navigationController?.popViewControllerAnimated(true)
+        })
     }
     
     func deleteAction(sender:AnyObject) {

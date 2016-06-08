@@ -6,6 +6,12 @@
 //  Copyright © 2016年 wph. All rights reserved.
 //
 
+private extension Selector {
+    static let circleTappend = #selector(HomeViewController.budgetCircleClickAction(_:))
+    static let refreshTable = #selector(HomeViewController.refreshTableData(_:))
+    static let refreshCircle = #selector(HomeViewController.refreshTableData)
+}
+
 class HomeViewController: HFBaseViewController,UITableViewDelegate,UITableViewDataSource {
 
     let tableCellIndentifierDate = "tableCellIndentifierDate"
@@ -18,6 +24,7 @@ class HomeViewController: HFBaseViewController,UITableViewDelegate,UITableViewDa
     @IBOutlet weak var topCenterView: UIButton!
     @IBOutlet weak var topPercentLabel: UILabel!
     @IBOutlet weak var topCnDateView: UILabel!
+    @IBOutlet weak var bottomBgView: UIView!
     
     var tableSource = [AccountGroupStruct]()
     
@@ -46,6 +53,9 @@ class HomeViewController: HFBaseViewController,UITableViewDelegate,UITableViewDa
         self.navigationController?.navigationBar.titleTextAttributes = colorDict
         self.navigationController?.navigationBar.hideBottomHairline()
         
+        bottomBgView.layer.borderWidth = 0.5
+        bottomBgView.layer.borderColor = UIColor.groupTableViewBackgroundColor().CGColor
+        
         payLabel.adjustsFontSizeToFitWidth = true;
         incomeLabel.adjustsFontSizeToFitWidth = true;
         
@@ -61,7 +71,7 @@ class HomeViewController: HFBaseViewController,UITableViewDelegate,UITableViewDa
         progress.setColors(appIncomeColor)
         progress.trackColor = appLitePayColor
         topCenterView.addSubview(progress)
-        topCenterView.addTarget(self, action: #selector(self.budgetCircleClickAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        topCenterView.addTarget(self, action: .circleTappend, forControlEvents: UIControlEvents.TouchUpInside)
         
         let blankImage = UIImage(named: "blank_bill")
         let imageWidth:CGFloat = (blankImage?.size.width)!
@@ -84,8 +94,8 @@ class HomeViewController: HFBaseViewController,UITableViewDelegate,UITableViewDa
         let dateCnStr = NSDate.yearMonthCnStringWithStandardFormat(nowDate)
         topCnDateView.text = dateCnStr
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.refreshTableData(_:)), name: CREATE_UPDATE_DEL_ACCOUNT_SUCCESS_NOTICATION, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.refreshBudgetCircle), name: CHANGE_MONTH_BUDGET_NUM_SUCCESS_NOTIFICATION, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: .refreshTable, name: CREATE_UPDATE_DEL_ACCOUNT_SUCCESS_NOTICATION, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: .refreshCircle, name: CHANGE_MONTH_BUDGET_NUM_SUCCESS_NOTIFICATION, object: nil)
         
         getTableDataWithMonth(currentSearchMonthStr!)
     }
