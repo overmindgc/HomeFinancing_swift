@@ -8,15 +8,15 @@
 
 class DBTableManager : GCBaseStorage {
     static let sharedInstance = DBTableManager()
-    private override init() {}
+    fileprivate override init() {}
     
     func createAllTables() {
-        if !NSUserDefaults.hasInitDBTables() {
+        if !UserDefaults.hasInitDBTables() {
             var success:Bool = true
-            success = self.createTableWithModelClass(object_getClass(AccountModel()))
-            success = self.createTableWithModelClass(object_getClass(MemberModel()))
+            success = self.createTable(withModelClass: object_getClass(AccountModel()))
+            success = self.createTable(withModelClass: object_getClass(MemberModel()))
             if success {
-                NSUserDefaults.saveHasInitDBTables(true)
+                UserDefaults.saveHasInitDBTables(true)
             }
         }
     }

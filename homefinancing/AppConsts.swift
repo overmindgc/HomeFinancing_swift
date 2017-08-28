@@ -6,8 +6,8 @@
 //  Copyright © 2016 wph. All rights reserved.
 //
 
-let SCREEN_WIDTH = UIScreen.mainScreen().bounds.size.width
-let SCREEN_HEIGHT = UIScreen.mainScreen().bounds.size.height
-let SCREEN_SCALE = UIScreen.mainScreen().scale
+let SCREEN_WIDTH = UIScreen.main.bounds.size.width
+let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
+let SCREEN_SCALE = UIScreen.main.scale
 
 let NUM_STRING_POOL = ["0","1","2","3","4","5","6","7","8","9"]

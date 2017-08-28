@@ -33,7 +33,7 @@ class BudgetViewController: HFBaseViewController {
         self.navigationController?.title = "预算"
         
         setupButton.layer.borderWidth = 1
-        setupButton.layer.borderColor = appPayColor.CGColor
+        setupButton.layer.borderColor = appPayColor.cgColor
         setupButton.layer.cornerRadius = 17.5
         
         let circleFrame:CGRect = centerCicleView.frame
@@ -47,10 +47,10 @@ class BudgetViewController: HFBaseViewController {
         progress.clockwise = false
         progress.gradientRotateSpeed = 2
         progress.roundedCorners = true
-        progress.glowMode = .NoGlow
+        progress.glowMode = .noGlow
         progress.angle = 0
         progress.setColors(appIncomeColor)
-        progress.trackColor = UIColor.groupTableViewBackgroundColor()
+        progress.trackColor = UIColor.groupTableViewBackground
         self.view.addSubview(progress)
         
         if isNowMonth != true {
@@ -59,7 +59,7 @@ class BudgetViewController: HFBaseViewController {
         }
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         initBudgetViewData()
     }
     
@@ -69,7 +69,7 @@ class BudgetViewController: HFBaseViewController {
     }
     
     func initBudgetViewData() {
-        let budget = NSUserDefaults.currentMonthBudget()
+        let budget = UserDefaults.currentMonthBudget()
         
         monthBudgetLabel.text = "￥" + String(budget)
         monthPayLabel.text = "￥" + monthPayTotalAmount!

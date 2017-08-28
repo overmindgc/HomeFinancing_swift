@@ -17,21 +17,21 @@ class AccountNumberPad: UIView {
     /**结果值*/
     internal var resultNum:Int?
     
-    typealias confirmResultClosure = (result:Int) -> Void
+    typealias confirmResultClosure = (_ result:Int) -> Void
     internal var confirmClosure:confirmResultClosure?
     
     /**单数字最大长度*/
     internal var maxNumLength:Int = 8
     
-    private var topBarView:UIView!
-    private var topBarLabel:UILabel!
-    private var resultLabel:UILabel!
+    fileprivate var topBarView:UIView!
+    fileprivate var topBarLabel:UILabel!
+    fileprivate var resultLabel:UILabel!
     
-    private var confirmButton:NumPadButton?
+    fileprivate var confirmButton:NumPadButton?
     
     internal var resultText:String = ""
     
-    private let buttonTag = (plusTag: 1001,deleteTag: 1002,clearTag: 1003,confirmTag: 1004)
+    fileprivate let buttonTag = (plusTag: 1001,deleteTag: 1002,clearTag: 1003,confirmTag: 1004)
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -45,7 +45,7 @@ class AccountNumberPad: UIView {
     
     // MARK: - Public functions
     /**改变顶部标题的文字和样式*/
-    func changeTopBarLabelText(text:String,type:AccountType) {
+    func changeTopBarLabelText(_ text:String,type:AccountType) {
         topBarLabel?.text = text;
         if type == AccountType.pay {
             topBarLabel?.textColor = appPayColor
@@ -55,32 +55,32 @@ class AccountNumberPad: UIView {
     }
     
     /**改变金额数值和标签文字*/
-    func setAmountResultText(amountString:String) {
+    func setAmountResultText(_ amountString:String) {
         resultText = amountString
         resultLabel.text = resultText
     }
     
     // MARK: - private functions
     
-    private func initViews() {
-        self.backgroundColor = UIColor.lightGrayColor()
+    fileprivate func initViews() {
+        self.backgroundColor = UIColor.lightGray
         
-        topBarView = UIView(frame: CGRectMake(0,0,SCREEN_WIDTH,AccountNumberPad.topBarHeight))
+        topBarView = UIView(frame: CGRect(x: 0,y: 0,width: SCREEN_WIDTH,height: AccountNumberPad.topBarHeight))
         topBarView.backgroundColor = appDarkBackgroundColor_lite
         self.addSubview(topBarView)
         
-        topBarLabel = UILabel(frame: CGRectMake(15,0,100,AccountNumberPad.topBarHeight))
-        topBarLabel.font = UIFont.boldSystemFontOfSize(20)
+        topBarLabel = UILabel(frame: CGRect(x: 15,y: 0,width: 100,height: AccountNumberPad.topBarHeight))
+        topBarLabel.font = UIFont.boldSystemFont(ofSize: 20)
         topBarLabel.text = "一般支出"
         topBarLabel.textColor = appPayColor
         self.addSubview(topBarLabel)
         
-        resultLabel = UILabel(frame: CGRectMake(topBarLabel!.frame.size.width + 15,0,SCREEN_WIDTH - topBarLabel!.frame.size.width - 15 - 15,AccountNumberPad.topBarHeight))
-        resultLabel.textColor = UIColor.whiteColor()
+        resultLabel = UILabel(frame: CGRect(x: topBarLabel!.frame.size.width + 15,y: 0,width: SCREEN_WIDTH - topBarLabel!.frame.size.width - 15 - 15,height: AccountNumberPad.topBarHeight))
+        resultLabel.textColor = UIColor.white
         resultLabel.adjustsFontSizeToFitWidth = true
         resultLabel.numberOfLines = 0
-        resultLabel.font = UIFont.boldSystemFontOfSize(27)
-        resultLabel.textAlignment = NSTextAlignment.Right
+        resultLabel.font = UIFont.boldSystemFont(ofSize: 27)
+        resultLabel.textAlignment = NSTextAlignment.right
         resultLabel.text = "0"
         self.addSubview(resultLabel)
         
@@ -89,7 +89,7 @@ class AccountNumberPad: UIView {
         initRightOperateButtons()
     }
     
-    private func initLeftNumButtons() {
+    fileprivate func initLeftNumButtons() {
         let startSqY:CGFloat = AccountNumberPad.topBarHeight + AccountNumberPad.separateLineWidth
         for index in 1 ..< 13 {
             var numLine:Int = index / 3 + 1
@@ -103,33 +103,33 @@ class AccountNumberPad: UIView {
             let numSqY:CGFloat = startSqY + (AccountNumberPad.numberSqHeight + AccountNumberPad.separateLineWidth) * (CGFloat(numLine) - 1)
             
             if index < 10 {
-                let numButton:NumPadButton = NumPadButton(frame: CGRectMake(numSqX,numSqY,AccountNumberPad.numberSqWidth,AccountNumberPad.numberSqHeight))
-                numButton.setTitle(String(index), forState: UIControlState.Normal)
-                numButton.addTarget(self, action: #selector(self.buttonClick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+                let numButton:NumPadButton = NumPadButton(frame: CGRect(x: numSqX,y: numSqY,width: AccountNumberPad.numberSqWidth,height: AccountNumberPad.numberSqHeight))
+                numButton.setTitle(String(index), for: UIControlState())
+                numButton.addTarget(self, action: #selector(self.buttonClick(_:)), for: UIControlEvents.touchUpInside)
                 numButton.tag = index
                 self.addSubview(numButton)
             }
             
             if index == 10 {
-                let zeroButton:NumPadButton = NumPadButton(frame: CGRectMake(numSqX,numSqY,AccountNumberPad.numberSqWidth * 2 + AccountNumberPad.separateLineWidth,AccountNumberPad.numberSqHeight))
-                zeroButton.setTitle("0", forState: UIControlState.Normal)
-                zeroButton.addTarget(self, action: #selector(self.buttonClick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+                let zeroButton:NumPadButton = NumPadButton(frame: CGRect(x: numSqX,y: numSqY,width: AccountNumberPad.numberSqWidth * 2 + AccountNumberPad.separateLineWidth,height: AccountNumberPad.numberSqHeight))
+                zeroButton.setTitle("0", for: UIControlState())
+                zeroButton.addTarget(self, action: #selector(self.buttonClick(_:)), for: UIControlEvents.touchUpInside)
                 zeroButton.tag = 0
                 self.addSubview(zeroButton)
             }
             
             if index == 12 {
-                let plusButton:NumPadButton = NumPadButton(frame: CGRectMake(numSqX,numSqY,AccountNumberPad.numberSqWidth,AccountNumberPad.numberSqHeight))
+                let plusButton:NumPadButton = NumPadButton(frame: CGRect(x: numSqX,y: numSqY,width: AccountNumberPad.numberSqWidth,height: AccountNumberPad.numberSqHeight))
                 plusButton.tag = buttonTag.plusTag
-                plusButton.setTitle("＋", forState: UIControlState.Normal)
-                plusButton.setTitleColor(appIncomeColor, forState: UIControlState.Normal)
-                plusButton.addTarget(self, action: #selector(self.buttonClick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+                plusButton.setTitle("＋", for: UIControlState())
+                plusButton.setTitleColor(appIncomeColor, for: UIControlState())
+                plusButton.addTarget(self, action: #selector(self.buttonClick(_:)), for: UIControlEvents.touchUpInside)
                 self.addSubview(plusButton)
             }
         }
     }
     
-    private func initRightOperateButtons() {
+    fileprivate func initRightOperateButtons() {
         let startSqY:CGFloat = AccountNumberPad.topBarHeight + AccountNumberPad.separateLineWidth
         
         for index in 0 ..< 3 {
@@ -140,43 +140,43 @@ class AccountNumberPad: UIView {
             if index == 2 {
                 buttonHeight = AccountNumberPad.numberSqHeight * 2 + AccountNumberPad.separateLineWidth
             }
-            let operateButton = NumPadButton(frame: CGRectMake(sqX,sqY,AccountNumberPad.operatorSqWidth,buttonHeight))
+            let operateButton = NumPadButton(frame: CGRect(x: sqX,y: sqY,width: AccountNumberPad.operatorSqWidth,height: buttonHeight))
             
             switch index {
             case 0:
                 operateButton.tag = buttonTag.deleteTag
-                operateButton.setImage(UIImage(named: "delete_num"), forState: UIControlState.Normal)
+                operateButton.setImage(UIImage(named: "delete_num"), for: UIControlState())
             case 1:
                 operateButton.tag = buttonTag.clearTag
-                operateButton.titleLabel?.font = UIFont.boldSystemFontOfSize(22)
-                operateButton.setTitle("C", forState: UIControlState.Normal)
+                operateButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
+                operateButton.setTitle("C", for: UIControlState())
             case 2:
                 confirmButton = operateButton
                 operateButton.tag = buttonTag.confirmTag
-                operateButton.titleLabel?.font = UIFont.boldSystemFontOfSize(18)
-                operateButton.setTitle("确定", forState: UIControlState.Normal)
-                operateButton.setTitleColor(appPayColor, forState: UIControlState.Normal)
+                operateButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+                operateButton.setTitle("确定", for: UIControlState())
+                operateButton.setTitleColor(appPayColor, for: UIControlState())
             default:
                 print("none")
             }
             
-            operateButton.addTarget(self, action: #selector(self.buttonClick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            operateButton.addTarget(self, action: #selector(self.buttonClick(_:)), for: UIControlEvents.touchUpInside)
             
             self.addSubview(operateButton)
         }
     }
     
     // MARK: - action
-    func buttonClick(sender:AnyObject) {
+    func buttonClick(_ sender:AnyObject) {
         let currButton:NumPadButton = sender as! NumPadButton
         
         switch currButton.tag {
         case buttonTag.plusTag:
-            resultText = resultText.stringByAppendingString("+")
+            resultText = resultText + "+"
             
         case buttonTag.deleteTag:
             if resultText.characters.count > 0 {
-                resultText.removeAtIndex(resultText.endIndex.predecessor())
+                resultText.remove(at: resultText.characters.index(before: resultText.endIndex))
             }
         case buttonTag.clearTag:
             resultText = ""
@@ -193,15 +193,15 @@ class AccountNumberPad: UIView {
                confirmInput()
             }
         default:
-            resultText = resultText.stringByAppendingString(String(currButton.tag))
+            resultText = resultText + String(currButton.tag)
             if checkInputNumHasMaxLength() {
-                resultText.removeAtIndex(resultText.endIndex.predecessor())
+                resultText.remove(at: resultText.characters.index(before: resultText.endIndex))
             }
         }
         
         if resultText.characters.count > 0 {
             resultLabel?.text = resultText
-            if resultText.containsString("+") {
+            if resultText.contains("+") {
                 changeConfirmToEqule(true)
             } else {
                 changeConfirmToEqule(false)
@@ -213,7 +213,7 @@ class AccountNumberPad: UIView {
         }
     }
     
-    private func checkInputNumHasMaxLength() -> Bool {
+    fileprivate func checkInputNumHasMaxLength() -> Bool {
 //        let inputNumArr = resultText.split("+") //这种方法取出的，会有空字符串
         //这种方法，只取出数字，没有空字符
         let inputNumArr = resultText.characters.split{$0 == "+"}.map(String.init)
@@ -225,26 +225,26 @@ class AccountNumberPad: UIView {
         return false
     }
     
-    private func changeConfirmToEqule(isChange:Bool) {
+    fileprivate func changeConfirmToEqule(_ isChange:Bool) {
         if isChange {
-            confirmButton?.titleLabel?.font = UIFont.boldSystemFontOfSize(25)
-            confirmButton?.setTitle("=", forState: UIControlState.Normal)
-            confirmButton?.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            confirmButton?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+            confirmButton?.setTitle("=", for: UIControlState())
+            confirmButton?.setTitleColor(UIColor.white, for: UIControlState())
         } else {
-            confirmButton?.titleLabel?.font = UIFont.boldSystemFontOfSize(18)
-            confirmButton?.setTitle("确定", forState: UIControlState.Normal)
-            confirmButton?.setTitleColor(appPayColor, forState: UIControlState.Normal)
+            confirmButton?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+            confirmButton?.setTitle("确定", for: UIControlState())
+            confirmButton?.setTitleColor(appPayColor, for: UIControlState())
         }
     }
     
-    private func confirmInput() {
+    fileprivate func confirmInput() {
         if confirmClosure != nil {
             if resultText.characters.count > 0 {
                 resultNum = Int(resultText)!
-                confirmClosure!(result: resultNum!)
+                confirmClosure!(resultNum!)
             } else {
                 resultNum = 0
-                confirmClosure!(result: resultNum!)
+                confirmClosure!(resultNum!)
             }
         }
         

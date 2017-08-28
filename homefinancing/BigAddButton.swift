@@ -15,17 +15,17 @@ class BigAddButton: UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        plusLabel = UILabel(frame:CGRectMake(0,0,buttonWidth,35))
-        plusLabel.textAlignment = NSTextAlignment.Center
-        plusLabel.font = UIFont.boldSystemFontOfSize(30)
-        plusLabel.textColor = UIColor.whiteColor()
+        plusLabel = UILabel(frame:CGRect(x: 0,y: 0,width: buttonWidth,height: 35))
+        plusLabel.textAlignment = NSTextAlignment.center
+        plusLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        plusLabel.textColor = UIColor.white
         plusLabel.text = "+"
         self.addSubview(plusLabel)
         
-        addLabel = UILabel(frame:CGRectMake(0,20,buttonWidth,40))
-        addLabel.textAlignment = NSTextAlignment.Center
-        addLabel.font = UIFont.systemFontOfSize(16)
-        addLabel.textColor = UIColor.whiteColor()
+        addLabel = UILabel(frame:CGRect(x: 0,y: 20,width: buttonWidth,height: 40))
+        addLabel.textAlignment = NSTextAlignment.center
+        addLabel.font = UIFont.systemFont(ofSize: 16)
+        addLabel.textColor = UIColor.white
         addLabel.text = "记一笔"
         self.addSubview(addLabel)
     }

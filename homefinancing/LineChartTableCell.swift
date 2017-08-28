@@ -29,32 +29,32 @@ class LineChartTableCell: HFTableViewCell {
     }
     
     func initViews() {
-        self.selectionStyle = UITableViewCellSelectionStyle.None
+        self.selectionStyle = UITableViewCellSelectionStyle.none
         
-        monthLabel = UILabel(frame: CGRectMake(0,0,lineChartTableCellMonthLabelWidth,lineChartTableCellHeight))
-        monthLabel.textAlignment = NSTextAlignment.Center
+        monthLabel = UILabel(frame: CGRect(x: 0,y: 0,width: lineChartTableCellMonthLabelWidth,height: lineChartTableCellHeight))
+        monthLabel.textAlignment = NSTextAlignment.center
         monthLabel.textColor = appGrayTextColor
-        monthLabel.font = UIFont.boldSystemFontOfSize(13)
+        monthLabel.font = UIFont.boldSystemFont(ofSize: 13)
         self.addSubview(monthLabel)
         
-        incomeLabel = UILabel(frame: CGRectMake(lineChartTableCellMonthLabelWidth,0,lineChartTableCellValueLabelWidth,lineChartTableCellHeight))
-        incomeLabel.textAlignment = NSTextAlignment.Center
+        incomeLabel = UILabel(frame: CGRect(x: lineChartTableCellMonthLabelWidth,y: 0,width: lineChartTableCellValueLabelWidth,height: lineChartTableCellHeight))
+        incomeLabel.textAlignment = NSTextAlignment.center
         incomeLabel.textColor = appGrayTextColor
-        incomeLabel.font = UIFont.boldSystemFontOfSize(13)
+        incomeLabel.font = UIFont.boldSystemFont(ofSize: 13)
         incomeLabel.adjustsFontSizeToFitWidth = true
         self.addSubview(incomeLabel)
         
-        payLabel = UILabel(frame: CGRectMake(lineChartTableCellMonthLabelWidth + lineChartTableCellValueLabelWidth,0,lineChartTableCellValueLabelWidth,lineChartTableCellHeight))
-        payLabel.textAlignment = NSTextAlignment.Center
+        payLabel = UILabel(frame: CGRect(x: lineChartTableCellMonthLabelWidth + lineChartTableCellValueLabelWidth,y: 0,width: lineChartTableCellValueLabelWidth,height: lineChartTableCellHeight))
+        payLabel.textAlignment = NSTextAlignment.center
         payLabel.textColor = appGrayTextColor
-        payLabel.font = UIFont.boldSystemFontOfSize(13)
+        payLabel.font = UIFont.boldSystemFont(ofSize: 13)
         payLabel.adjustsFontSizeToFitWidth = true
         self.addSubview(payLabel)
 
-        leftLabel = UILabel(frame: CGRectMake(lineChartTableCellMonthLabelWidth + lineChartTableCellValueLabelWidth * 2,0,lineChartTableCellValueLabelWidth,lineChartTableCellHeight))
-        leftLabel.textAlignment = NSTextAlignment.Center
+        leftLabel = UILabel(frame: CGRect(x: lineChartTableCellMonthLabelWidth + lineChartTableCellValueLabelWidth * 2,y: 0,width: lineChartTableCellValueLabelWidth,height: lineChartTableCellHeight))
+        leftLabel.textAlignment = NSTextAlignment.center
         leftLabel.textColor = appGrayTextColor
-        leftLabel.font = UIFont.boldSystemFontOfSize(13)
+        leftLabel.font = UIFont.boldSystemFont(ofSize: 13)
         leftLabel.adjustsFontSizeToFitWidth = true
         self.addSubview(leftLabel)
         

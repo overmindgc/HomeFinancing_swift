@@ -27,15 +27,15 @@ class MenberManagerViewController: HFBaseViewController,UITableViewDelegate,UITa
     }
     
     //每一块有多少行
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableSource.count
     }
     //绘制cell
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
         
-        let itemCell = MemberTableCell(style: UITableViewCellStyle.Default, reuseIdentifier: tableCellIndentifierItem)
-        itemCell.accessoryType = UITableViewCellAccessoryType.None
+        let itemCell = MemberTableCell(style: UITableViewCellStyle.default, reuseIdentifier: tableCellIndentifierItem)
+        itemCell.accessoryType = UITableViewCellAccessoryType.none
         
         let memberModel = tableSource[row]
         itemCell.memberModel = memberModel
@@ -48,37 +48,37 @@ class MenberManagerViewController: HFBaseViewController,UITableViewDelegate,UITa
         return itemCell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let currCell:HFTableViewCell = tableView.cellForRowAtIndexPath(indexPath) as! HFTableViewCell
-        currCell.selected = false
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currCell:HFTableViewCell = tableView.cellForRow(at: indexPath) as! HFTableViewCell
+        currCell.isSelected = false
         
     }
     
     //每个cell的高度
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return memberCellHeight
     }
     
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let bgView:UIView = UIView(frame: CGRectMake(0,0,SCREEN_WIDTH,memberCellHeight))
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let bgView:UIView = UIView(frame: CGRect(x: 0,y: 0,width: SCREEN_WIDTH,height: memberCellHeight))
         let padding:CGFloat = 20
-        let addButton:MemberAddButton = MemberAddButton(frame: CGRectMake(padding,padding,SCREEN_WIDTH - padding * 2,45))
-        addButton.addTarget(self, action: #selector(self.addMemberAction), forControlEvents: UIControlEvents.TouchUpInside)
+        let addButton:MemberAddButton = MemberAddButton(frame: CGRect(x: padding,y: padding,width: SCREEN_WIDTH - padding * 2,height: 45))
+        addButton.addTarget(self, action: #selector(self.addMemberAction), for: UIControlEvents.touchUpInside)
         bgView.addSubview(addButton)
         
         return bgView
     }
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 65
     }
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle ==  UITableViewCellEditingStyle.Delete {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle ==  UITableViewCellEditingStyle.delete {
             let currModel = tableSource[indexPath.row]
             //创建alert
             let alertView = YoYoAlertView(title: "提醒", message: "确定要删除此成员吗？（删除后该成员原来发生的账单将归属到全家）", cancelButtonTitle: "取 消", sureButtonTitle: "确 定")
@@ -103,7 +103,7 @@ class MenberManagerViewController: HFBaseViewController,UITableViewDelegate,UITa
         alertView.clickIndexClosure { (index,contentText) in
             if index == 2 {
                 let newMemberModel = MemberModel()
-                newMemberModel.id = String(NSDate().timeIntervalSince1970)
+                newMemberModel.id = String(Date().timeIntervalSince1970)
                 newMemberModel.name = contentText
                 MemberStorageService.sharedInstance.saveMemberModel(newMemberModel)
                 self.refreshTalbeData()
@@ -111,7 +111,7 @@ class MenberManagerViewController: HFBaseViewController,UITableViewDelegate,UITa
         }
     }
     
-    func editMember(model:MemberModel) {
+    func editMember(_ model:MemberModel) {
         //创建alert
         let alertView = YoYoInputAlertView(title: "修改成员名称", message: model.name, cancelButtonTitle: "取 消", sureButtonTitle: "确 定")
         //调用显示

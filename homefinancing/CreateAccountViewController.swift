@@ -29,11 +29,11 @@ class CreateAccountViewController: HFBaseViewController {
     
     var numPadView:AccountNumberPad?
     
-    let nowDate:NSDate = NSDate()
+    let nowDate:Date = Date()
     
     var currentResult:String?
     var currentSelectTypeButton:AccountTypeSquareButton?
-    var currentSelectDate:NSDate?
+    var currentSelectDate:Date?
     var currentRemarkText:String?
     var currentMemberId:String?
     var currentMemberName:String?
@@ -42,16 +42,16 @@ class CreateAccountViewController: HFBaseViewController {
     
     override func viewDidLoad() {
         dateButton.layer.borderWidth = 1
-        dateButton.layer.borderColor = UIColor.whiteColor().CGColor
+        dateButton.layer.borderColor = UIColor.white.cgColor
         dateButton.layer.cornerRadius = 5
         
         menberButton.layer.borderWidth = 1
-        menberButton.layer.borderColor = UIColor.whiteColor().CGColor
+        menberButton.layer.borderColor = UIColor.white.cgColor
         menberButton.layer.cornerRadius = 5
         menberButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
         let scrollViewHeight:CGFloat = SCREEN_HEIGHT - AccountNumberPad.padHeight - horSeparateLine.frame.origin.y
-        scrollView = UIScrollView(frame: CGRectMake(0,horSeparateLine.frame.origin.y + 1,SCREEN_WIDTH, scrollViewHeight))
+        scrollView = UIScrollView(frame: CGRect(x: 0,y: horSeparateLine.frame.origin.y + 1,width: SCREEN_WIDTH, height: scrollViewHeight))
         scrollView.showsVerticalScrollIndicator = true
         scrollView.alwaysBounceVertical = true
         self.view.addSubview(scrollView)
@@ -60,11 +60,11 @@ class CreateAccountViewController: HFBaseViewController {
         initNumberPadView()
         
         if originAccountModel != nil {
-            currentSelectDate = NSDate.dateWithStandardFormatString(originAccountModel?.accountDate)
+            currentSelectDate = Date.dateWithStandardFormatString(originAccountModel?.accountDate)
             currentRemarkText = originAccountModel?.remark
             currentMemberId = originAccountModel?.memberId
             currentMemberName = originAccountModel?.memberName
-            menberButton.setTitle(currentMemberName, forState: UIControlState.Normal)
+            menberButton.setTitle(currentMemberName, for: UIControlState())
             currentResult = originAccountModel?.amount
             numPadView?.changeTopBarLabelText((originAccountModel?.typeName!)!, type: AccountType(rawValue: (originAccountModel?.payOrIncome)!)!)
             numPadView?.setAmountResultText(currentResult!)
@@ -73,7 +73,7 @@ class CreateAccountViewController: HFBaseViewController {
             currentMemberId = "1001"
             currentMemberName = "全家"
         }
-        self.dateButton.setTitle(NSDate.monthDayStringWithStandardFormat(currentSelectDate), forState: UIControlState.Normal)
+        self.dateButton.setTitle(Date.monthDayStringWithStandardFormat(currentSelectDate), for: UIControlState())
     }
     
     override func viewDidLayoutSubviews() {
@@ -84,13 +84,13 @@ class CreateAccountViewController: HFBaseViewController {
         separateLine.frame = CGRect(x:SCREEN_WIDTH/4*3 - 6, y:64, width:1, height:29)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = true
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
         
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = false
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
         
     }
     
@@ -112,11 +112,11 @@ class CreateAccountViewController: HFBaseViewController {
             let payButtonX:CGFloat = AccountTypeSquareButton.buttonPadding * CGFloat(payLineNum) + 0 + AccountTypeSquareButton.buttonWidth * (CGFloat(payLineNum) - 1)
             let payButtonY:CGFloat = AccountTypeSquareButton.buttonPadding * CGFloat(payLine) + AccountTypeSquareButton.buttonHeight * CGFloat(payLine) + paddingTop
             
-            let payButton:AccountTypeSquareButton = AccountTypeSquareButton(frame: CGRectMake(payButtonX, payButtonY, AccountTypeSquareButton.buttonWidth, AccountTypeSquareButton.buttonHeight),type: AccountType.pay,title: payModel.name!)
+            let payButton:AccountTypeSquareButton = AccountTypeSquareButton(frame: CGRect(x: payButtonX, y: payButtonY, width: AccountTypeSquareButton.buttonWidth, height: AccountTypeSquareButton.buttonHeight),type: AccountType.pay,title: payModel.name!)
             payButton.buttonIndex = index;
             payButton.buttonId = payModel.id
-            payButton.addTarget(self, action: #selector(self.typeButtonClick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-            if originAccountModel != nil && currentSelectTypeButton == nil && originAccountModel?.payOrIncome == String(AccountType.pay) {
+            payButton.addTarget(self, action: #selector(self.typeButtonClick(_:)), for: UIControlEvents.touchUpInside)
+            if originAccountModel != nil && currentSelectTypeButton == nil && originAccountModel?.payOrIncome == String(describing: AccountType.pay) {
                 if originAccountModel?.typeId == payModel.id {
                     payButton.selectedSquare = true;
                     currentSelectTypeButton = payButton
@@ -134,12 +134,12 @@ class CreateAccountViewController: HFBaseViewController {
             let incomeButtonX:CGFloat = SCREEN_WIDTH -  AccountTypeSquareButton.buttonPadding - AccountTypeSquareButton.buttonWidth
             let incomeButtonY:CGFloat = paddingTop + AccountTypeSquareButton.buttonPadding * CGFloat(index) + AccountTypeSquareButton.buttonHeight * CGFloat(index)
             
-            let incomeButton:AccountTypeSquareButton = AccountTypeSquareButton(frame: CGRectMake(incomeButtonX, incomeButtonY, AccountTypeSquareButton.buttonWidth, AccountTypeSquareButton.buttonHeight),type: AccountType.income,title: incomeModel.name!)
+            let incomeButton:AccountTypeSquareButton = AccountTypeSquareButton(frame: CGRect(x: incomeButtonX, y: incomeButtonY, width: AccountTypeSquareButton.buttonWidth, height: AccountTypeSquareButton.buttonHeight),type: AccountType.income,title: incomeModel.name!)
             incomeButton.buttonIndex = index
             incomeButton.buttonId = incomeModel.id
-            incomeButton.addTarget(self, action: #selector(self.typeButtonClick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            incomeButton.addTarget(self, action: #selector(self.typeButtonClick(_:)), for: UIControlEvents.touchUpInside)
             
-            if originAccountModel != nil && currentSelectTypeButton == nil && originAccountModel?.payOrIncome == String(AccountType.income) {
+            if originAccountModel != nil && currentSelectTypeButton == nil && originAccountModel?.payOrIncome == String(describing: AccountType.income) {
                 if originAccountModel?.typeId == incomeModel.id {
                     incomeButton.selectedSquare = true;
                     currentSelectTypeButton = incomeButton
@@ -166,16 +166,16 @@ class CreateAccountViewController: HFBaseViewController {
             maxLine = incomeLine
         }
         
-        scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, CGFloat(maxLine) * AccountTypeSquareButton.buttonHeight + CGFloat(maxLine) * AccountTypeSquareButton.buttonPadding + paddingTop)
+        scrollView.contentSize = CGSize(width: SCREEN_WIDTH, height: CGFloat(maxLine) * AccountTypeSquareButton.buttonHeight + CGFloat(maxLine) * AccountTypeSquareButton.buttonPadding + paddingTop)
     }
     
     func initNumberPadView() {
-        numPadView = AccountNumberPad(frame: CGRectMake(0,SCREEN_HEIGHT - AccountNumberPad.padHeight,SCREEN_WIDTH,AccountNumberPad.padHeight))
+        numPadView = AccountNumberPad(frame: CGRect(x: 0,y: SCREEN_HEIGHT - AccountNumberPad.padHeight,width: SCREEN_WIDTH,height: AccountNumberPad.padHeight))
         numPadView?.confirmClosure = confirmResult
         self.view.addSubview(numPadView!)
     }
     
-    func confirmResult(result:Int) {
+    func confirmResult(_ result:Int) {
         if result > 0 {
             currentResult = String(result)
             let accountModel:AccountModel = AccountModel()
@@ -184,13 +184,13 @@ class CreateAccountViewController: HFBaseViewController {
                 accountModel.createDate = originAccountModel?.createDate
             } else {
                 accountModel.id = String(nowDate.timeIntervalSince1970)
-                accountModel.createDate = NSDate.dateFullStringWithStandardFormat(nowDate)
+                accountModel.createDate = Date.dateFullStringWithStandardFormat(nowDate)
             }
             accountModel.bookId = "1"
-            accountModel.accountDate = NSDate.dateDayStringWithStandardFormat(currentSelectDate)
-            accountModel.accountMonthDate = NSDate.yearMonthStringWithStandardFormat(currentSelectDate)
-            accountModel.accountYearDate = NSDate.yearStringWithStandardFormat(currentSelectDate)
-            accountModel.updateDate = NSDate.dateFullStringWithStandardFormat(nowDate)
+            accountModel.accountDate = Date.dateDayStringWithStandardFormat(currentSelectDate)
+            accountModel.accountMonthDate = Date.yearMonthStringWithStandardFormat(currentSelectDate)
+            accountModel.accountYearDate = Date.yearStringWithStandardFormat(currentSelectDate)
+            accountModel.updateDate = Date.dateFullStringWithStandardFormat(nowDate)
             accountModel.typeId = currentSelectTypeButton?.buttonId
             accountModel.typeName = currentSelectTypeButton?.buttonTitle
             accountModel.amount = currentResult
@@ -198,15 +198,15 @@ class CreateAccountViewController: HFBaseViewController {
             accountModel.memberName = currentMemberName
             accountModel.remark = currentRemarkText
             if currentSelectTypeButton?.accountType == AccountType.pay {
-                accountModel.payOrIncome = String(AccountType.pay)
+                accountModel.payOrIncome = String(describing: AccountType.pay)
             } else {
-                accountModel.payOrIncome = String(AccountType.income)
+                accountModel.payOrIncome = String(describing: AccountType.income)
             }
             
             DataStorageService.sharedInstance.addAccountToDatabase(accountModel)
             
-            self.dismissViewControllerAnimated(true, completion: {
-                NSNotificationCenter.defaultCenter().postNotificationName(CREATE_UPDATE_DEL_ACCOUNT_SUCCESS_NOTICATION, object: nil)
+            self.dismiss(animated: true, completion: {
+                NotificationCenter.default.post(name: Notification.Name(rawValue: CREATE_UPDATE_DEL_ACCOUNT_SUCCESS_NOTICATION), object: nil)
             })
         }
     }
@@ -215,7 +215,7 @@ class CreateAccountViewController: HFBaseViewController {
     
     
     // MARK: - Actions
-    func typeButtonClick(sender:AnyObject) {
+    func typeButtonClick(_ sender:AnyObject) {
         let typeButton = sender as! AccountTypeSquareButton
         currentSelectTypeButton = typeButton
         let isSelected = typeButton.selectedSquare
@@ -263,40 +263,40 @@ class CreateAccountViewController: HFBaseViewController {
         
     }
     
-    func selectMemberClick(sender: AnyObject)
+    func selectMemberClick(_ sender: AnyObject)
     {
         let item:KxMenuItem = sender as! KxMenuItem
         currentMemberId = item.itemId
         currentMemberName = item.title
-        menberButton.setTitle(currentMemberName, forState: UIControlState.Normal)
+        menberButton.setTitle(currentMemberName, for: UIControlState())
     }
     
     // MARK: - actions
     
-    @IBAction func selectDayAction(sender: AnyObject) {
-        DatePickerDialog().show("选择日期", doneButtonTitle: "确定", cancelButtonTitle: "取消", datePickerMode: .Date) {
+    @IBAction func selectDayAction(_ sender: AnyObject) {
+        DatePickerDialog().show("选择日期", doneButtonTitle: "确定", cancelButtonTitle: "取消", datePickerMode: .date) {
             (date) -> Void in
             self.currentSelectDate = date
-            self.dateButton.setTitle(NSDate.monthDayStringWithStandardFormat(date), forState: UIControlState.Normal)
+            self.dateButton.setTitle(Date.monthDayStringWithStandardFormat(date), for: UIControlState())
         }
     }
     
-    @IBAction func selectMemberAction(sender: AnyObject) {
+    @IBAction func selectMemberAction(_ sender: AnyObject) {
         memberModelArray = MemberStorageService.sharedInstance.getAllMemberList()
         let allMemberModel:MemberModel = MemberModel()
         allMemberModel.id = "1001"
         allMemberModel.name = "全家"
-        memberModelArray?.insert(allMemberModel, atIndex: 0)
+        memberModelArray?.insert(allMemberModel, at: 0)
         
         //配置零：内容配置
         var menuArray:Array<KxMenuItem> = []
         for memberModel in memberModelArray! {
             let menuItem = KxMenuItem.init(memberModel.name,itemId: memberModel.id , image: UIImage(named: "person_small"), target: self, action: #selector(self.selectMemberClick(_:)))
-            menuArray.append(menuItem)
+            menuArray.append(menuItem!)
         }
         
         //配置一：基础配置
-        KxMenu.setTitleFont(UIFont.systemFontOfSize(15))
+        KxMenu.setTitleFont(UIFont.systemFont(ofSize: 15))
         
         //配置二：拓展配置
         let options = OptionalConfiguration(arrowSize: 12,  //指示箭头大小
@@ -314,10 +314,10 @@ class CreateAccountViewController: HFBaseViewController {
         
         
         //菜单展示
-        KxMenu.showMenuInView(self.view, fromRect: sender.frame, menuItems: menuArray, withOptions: options)
+        KxMenu.show(in: self.view, from: sender.frame, menuItems: menuArray, withOptions: options)
     }
     
-    @IBAction func writeRemarkAction(sender: AnyObject) {
+    @IBAction func writeRemarkAction(_ sender: AnyObject) {
         //创建alert
         let alertView = YoYoInputAlertView(title: "填写备注", message: currentRemarkText, cancelButtonTitle: "取 消", sureButtonTitle: "确 定")
         //调用显示
@@ -330,7 +330,7 @@ class CreateAccountViewController: HFBaseViewController {
         }
     }
     
-    @IBAction func closeAction(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func closeAction(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

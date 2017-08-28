@@ -6,6 +6,6 @@
 //  Copyright © 2016 wph. All rights reserved.
 //
 
-func AppFont(size:CGFloat) -> UIFont {
-    return UIFont.systemFontOfSize(size)
+func AppFont(_ size:CGFloat) -> UIFont {
+    return UIFont.systemFont(ofSize: size)
 }

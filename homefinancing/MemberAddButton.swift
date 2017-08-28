@@ -19,7 +19,7 @@ class MemberAddButton: UIButton {
     
     func initViews() {
         self.backgroundColor = appPayColor
-        self.setTitle("+增加成员", forState: UIControlState.Normal)
+        self.setTitle("+增加成员", for: UIControlState())
         self.layer.cornerRadius = 5
     }
 }

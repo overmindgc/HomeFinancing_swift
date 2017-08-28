@@ -8,9 +8,9 @@
 
 class ChartStorageService: GCBaseStorage {
     static let sharedInstance = ChartStorageService()
-    private override init() {}
+    fileprivate override init() {}
     
-    internal func getPieChartData(monthStr:String?,yearStr:String?,memberId:String?,payOrIncome:String?) -> (array:Array<PieChartGroupModel>?,maxModel:PieChartGroupModel?) {
+    internal func getPieChartData(_ monthStr:String?,yearStr:String?,memberId:String?,payOrIncome:String?) -> (array:Array<PieChartGroupModel>?,maxModel:PieChartGroupModel?) {
         var paramDict:Dictionary<String,String> = Dictionary()
         if monthStr != nil {
             paramDict["accountMonthDate"] = monthStr
@@ -24,7 +24,7 @@ class ChartStorageService: GCBaseStorage {
         if payOrIncome != nil {
             paramDict["payOrIncome"] = payOrIncome
         }
-        let resultArray:Array<PieChartGroupModel> = self.groupSumModelArrayByClass(object_getClass(AccountModel()), resultClass: object_getClass(PieChartGroupModel()), sumStr: "amount", params: paramDict, groupStr: "typeId") as! Array<PieChartGroupModel>
+        let resultArray:Array<PieChartGroupModel> = self.groupSumModelArray(by: object_getClass(AccountModel()), resultClass: object_getClass(PieChartGroupModel()), sumStr: "amount", params: paramDict, groupStr: "typeId") as! Array<PieChartGroupModel>
         var maxModel:PieChartGroupModel?
         for model in resultArray {
             maxModel = model
@@ -33,7 +33,7 @@ class ChartStorageService: GCBaseStorage {
         return (resultArray,maxModel);
     }
     
-    internal func getPieChartLeftData(monthStr:String?,yearStr:String?) -> String {
+    internal func getPieChartLeftData(_ monthStr:String?,yearStr:String?) -> String {
         var paramDict:Dictionary<String,String> = Dictionary()
         
         if monthStr != nil {
@@ -43,16 +43,16 @@ class ChartStorageService: GCBaseStorage {
             paramDict["accountYearDate"] = yearStr
         }
         
-        paramDict["payOrIncome"] = String(AccountType.pay)
+        paramDict["payOrIncome"] = String(describing: AccountType.pay)
         
-        var sumPayStr:String? = self.sumResultByClass(object_getClass(AccountModel()), sumStr: "amount", params: paramDict)
+        var sumPayStr:String? = self.sumResult(by: object_getClass(AccountModel()), sumStr: "amount", params: paramDict)
         if sumPayStr == nil {
             sumPayStr = "0"
         }
         
-        paramDict["payOrIncome"] = String(AccountType.income)
+        paramDict["payOrIncome"] = String(describing: AccountType.income)
         
-        var sumIncomeStr:String? = self.sumResultByClass(object_getClass(AccountModel()), sumStr: "amount", params: paramDict)
+        var sumIncomeStr:String? = self.sumResult(by: object_getClass(AccountModel()), sumStr: "amount", params: paramDict)
         
         if sumIncomeStr == nil {
             sumIncomeStr = "0"
@@ -63,23 +63,23 @@ class ChartStorageService: GCBaseStorage {
         return leftStr;
     }
     
-    internal func getLineChartTopStatisticData(yearStr:String?) -> (payAvg:String,incomeAvg:String,yearLeft:String) {
+    internal func getLineChartTopStatisticData(_ yearStr:String?) -> (payAvg:String,incomeAvg:String,yearLeft:String) {
         var paramDict:Dictionary<String,String> = Dictionary()
         if yearStr != nil {
             paramDict["accountYearDate"] = yearStr
         }
         
-        paramDict["payOrIncome"] = String(AccountType.pay)
+        paramDict["payOrIncome"] = String(describing: AccountType.pay)
 
-        var sumPayStr:String? = self.sumResultByClass(object_getClass(AccountModel()), sumStr: "amount", params: paramDict)
+        var sumPayStr:String? = self.sumResult(by: object_getClass(AccountModel()), sumStr: "amount", params: paramDict)
         if sumPayStr == nil {
             sumPayStr = "0"
         }
         let avgPayStr = String(Int(sumPayStr!)! / 12)
         
-        paramDict["payOrIncome"] = String(AccountType.income)
+        paramDict["payOrIncome"] = String(describing: AccountType.income)
 
-        var sumIncomeStr:String? = self.sumResultByClass(object_getClass(AccountModel()), sumStr: "amount", params: paramDict)
+        var sumIncomeStr:String? = self.sumResult(by: object_getClass(AccountModel()), sumStr: "amount", params: paramDict)
         
         if sumIncomeStr == nil {
             sumIncomeStr = "0"
@@ -90,7 +90,7 @@ class ChartStorageService: GCBaseStorage {
         return (avgPayStr,avgIncomeStr,leftStr);
     }
     
-    internal func getLineChartData(yearStr:String?,payOrIncome:String?) -> Array<Int>? {
+    internal func getLineChartData(_ yearStr:String?,payOrIncome:String?) -> Array<Int>? {
         var paramDict:Dictionary<String,String> = Dictionary()
 
         if yearStr != nil {
@@ -101,7 +101,7 @@ class ChartStorageService: GCBaseStorage {
             paramDict["payOrIncome"] = payOrIncome
         }
         
-        let resultArray:[AccountModel] = self.groupSumModelArrayByClass(object_getClass(AccountModel()), resultClass: object_getClass(AccountModel()), sumStr: "amount", params: paramDict, groupStr: "accountMonthDate") as! Array<AccountModel>
+        let resultArray:[AccountModel] = self.groupSumModelArray(by: object_getClass(AccountModel()), resultClass: object_getClass(AccountModel()), sumStr: "amount", params: paramDict, groupStr: "accountMonthDate") as! Array<AccountModel>
         
         var valueArray:[Int] = []
         for index in 1..<13 {
@@ -111,18 +111,18 @@ class ChartStorageService: GCBaseStorage {
         return valueArray;
     }
     
-    internal func getLineChartTableSource(yearStr:String?) -> Array<LineChartTableSourceStruct>? {
+    internal func getLineChartTableSource(_ yearStr:String?) -> Array<LineChartTableSourceStruct>? {
         var paramDict:Dictionary<String,String> = Dictionary()
         
         if yearStr != nil {
             paramDict["accountYearDate"] = yearStr
         }
-        paramDict["payOrIncome"] = String(AccountType.pay)
+        paramDict["payOrIncome"] = String(describing: AccountType.pay)
 
-        let resultPayArray:[AccountModel] = self.groupSumModelArrayByClass(object_getClass(AccountModel()), resultClass: object_getClass(AccountModel()), sumStr: "amount", params: paramDict, groupStr: "accountMonthDate") as! Array<AccountModel>
-        paramDict["payOrIncome"] = String(AccountType.income)
+        let resultPayArray:[AccountModel] = self.groupSumModelArray(by: object_getClass(AccountModel()), resultClass: object_getClass(AccountModel()), sumStr: "amount", params: paramDict, groupStr: "accountMonthDate") as! Array<AccountModel>
+        paramDict["payOrIncome"] = String(describing: AccountType.income)
         
-        let resultIncomeArray:[AccountModel] = self.groupSumModelArrayByClass(object_getClass(AccountModel()), resultClass: object_getClass(AccountModel()), sumStr: "amount", params: paramDict, groupStr: "accountMonthDate") as! Array<AccountModel>
+        let resultIncomeArray:[AccountModel] = self.groupSumModelArray(by: object_getClass(AccountModel()), resultClass: object_getClass(AccountModel()), sumStr: "amount", params: paramDict, groupStr: "accountMonthDate") as! Array<AccountModel>
         
         var sourceStructArray:[LineChartTableSourceStruct] = []
         var payMonthValueArray:[Int] = []
@@ -146,7 +146,7 @@ class ChartStorageService: GCBaseStorage {
         return sourceStructArray;
     }
     
-    private func monthValueFromSource(month:Int,sourceArray:Array<AccountModel> ) -> Int {
+    fileprivate func monthValueFromSource(_ month:Int,sourceArray:Array<AccountModel> ) -> Int {
         
         for valueModel in sourceArray {
             let currMonthStr = valueModel.accountMonthDate?.split("-")[1]

@@ -7,7 +7,7 @@
 //
 
 extension KDCircularProgress {
-    func changeCircleValueWithDecimalPercent(percent:CGFloat) {
+    func changeCircleValueWithDecimalPercent(_ percent:CGFloat) {
         let newAngle:Int = Int(360 * percent)
 //        self.angle = newAngle
         self.animateToAngle(newAngle, duration: 0.5, completion: nil)

@@ -22,6 +22,6 @@ class HFTableViewCell: UITableViewCell {
     }
     
     func initBaseViews() {
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.white
     }
 }

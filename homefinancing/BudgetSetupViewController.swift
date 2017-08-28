@@ -15,42 +15,42 @@ class BudgetSetupViewController: HFBaseViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let doneBarButton = UIBarButtonItem(title: "完成",style: UIBarButtonItemStyle.Plain,target:self,action:#selector(self.doneAction(_:)))
+        let doneBarButton = UIBarButtonItem(title: "完成",style: UIBarButtonItemStyle.plain,target:self,action:#selector(self.doneAction(_:)))
         self.navigationItem.rightBarButtonItem = doneBarButton
         
-        let defaultMonthBudget = NSUserDefaults.currentMonthBudget()
+        let defaultMonthBudget = UserDefaults.currentMonthBudget()
         if defaultMonthBudget != 0 {
             amountTextField.text = String(defaultMonthBudget)
             let dayBudget:Int! = defaultMonthBudget / 30
             dayBudgetLabel.text = String(dayBudget)
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.textFieldDidChangeAction), name: UITextFieldTextDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.textFieldDidChangeAction), name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
         
     }
     // 触摸背景，关闭键盘
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    func doneAction(sender: AnyObject) {
+    func doneAction(_ sender: AnyObject) {
         amountTextField.resignFirstResponder()
-        if amountTextField.text?.characters.count > 0 {
+        if (amountTextField.text?.characters.count)! > 0 {
             let monthBudget:Int! = Int(amountTextField.text!)
-            NSUserDefaults.saveMonthBudget(monthBudget)
+            UserDefaults.saveMonthBudget(monthBudget)
         }
-        self.navigationController?.popViewControllerAnimated(true)
-        NSNotificationCenter.defaultCenter().postNotificationName(CHANGE_MONTH_BUDGET_NUM_SUCCESS_NOTIFICATION, object: nil)
+        self.navigationController?.popViewController(animated: true)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: CHANGE_MONTH_BUDGET_NUM_SUCCESS_NOTIFICATION), object: nil)
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         //退格放行
         if string == "" {
             return true
         } else {
             if NUM_STRING_POOL.contains(string) {
-                if textField.text?.characters.count > maxAmountLen - 1 {
+                if (textField.text?.characters.count)! > maxAmountLen - 1 {
                     return false
                 }
             }
@@ -58,13 +58,13 @@ class BudgetSetupViewController: HFBaseViewController,UITextFieldDelegate {
         return true
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
     func textFieldDidChangeAction() {
-        if amountTextField.text?.characters.count > 0 {
+        if (amountTextField.text?.characters.count)! > 0 {
             let monthBudget:Int! = Int(amountTextField.text!)
             let dayBudget:Int! = monthBudget / 30
             dayBudgetLabel.text = String(dayBudget)

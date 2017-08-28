@@ -35,16 +35,16 @@ class AccountTypeSquareButton: UIButton {
     
     func initViews() {
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.lightGrayColor().CGColor
+        self.layer.borderColor = UIColor.lightGray.cgColor
         self.layer.cornerRadius = 3
-        self.titleLabel?.font = UIFont.boldSystemFontOfSize(13)
+        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
         self.titleLabel?.adjustsFontSizeToFitWidth = true
-        self.setTitle(buttonTitle, forState: UIControlState.Normal)
-        self.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
+        self.setTitle(buttonTitle, for: UIControlState())
+        self.setTitleColor(UIColor.lightGray, for: UIControlState())
 //        self.addTarget(self, action: #selector(AccountTypeSquareButton.clickAction), forControlEvents: UIControlEvents.TouchUpInside)
         let imgWidth:CGFloat = 16
         let imgHeight:CGFloat = 15
-        selectImageView.frame = CGRectMake(self.frame.size.width - 13, self.frame.size.height - 11, imgWidth, imgHeight)
+        selectImageView.frame = CGRect(x: self.frame.size.width - 13, y: self.frame.size.height - 11, width: imgWidth, height: imgHeight)
         self.addSubview(selectImageView)
     }
     
@@ -52,20 +52,20 @@ class AccountTypeSquareButton: UIButton {
         didSet {
             if selectedSquare == true {
                 if accountType == AccountType.pay {
-                    self.layer.borderColor = appPayColor.CGColor
-                    self.setTitleColor(appPayColor, forState: UIControlState.Normal)
-                    selectImageView.hidden = false
+                    self.layer.borderColor = appPayColor.cgColor
+                    self.setTitleColor(appPayColor, for: UIControlState())
+                    selectImageView.isHidden = false
                     selectImageView.image = UIImage(named: "star_blue")
                 } else {
-                    self.layer.borderColor = appIncomeColor.CGColor
-                    self.setTitleColor(appIncomeColor, forState: UIControlState.Normal)
-                    selectImageView.hidden = false
+                    self.layer.borderColor = appIncomeColor.cgColor
+                    self.setTitleColor(appIncomeColor, for: UIControlState())
+                    selectImageView.isHidden = false
                     selectImageView.image = UIImage(named: "star_yellow")
                 }
             } else {
-                self.layer.borderColor = UIColor.lightGrayColor().CGColor
-                self.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
-                selectImageView.hidden = true
+                self.layer.borderColor = UIColor.lightGray.cgColor
+                self.setTitleColor(UIColor.lightGray, for: UIControlState())
+                selectImageView.isHidden = true
             }
         }
     }

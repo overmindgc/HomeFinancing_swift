@@ -8,7 +8,7 @@
 
 extension String{
     
-    func split(s:String)->[String]{
+    func split(_ s:String)->[String]{
         if s.isEmpty{
             var spiltedString=[String]()
             for y in self.characters{
@@ -16,6 +16,6 @@ extension String{
             }
             return spiltedString
         }
-        return self.componentsSeparatedByString(s)
+        return self.components(separatedBy: s)
     }
 }

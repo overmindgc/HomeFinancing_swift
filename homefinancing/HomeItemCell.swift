@@ -13,8 +13,8 @@ class HomeItemCell: HFTableViewCell {
     var payLabel: UILabel!
     var incomeLabel: UILabel!
     
-    private var centerColorView: UIView!
-    private var verLineView:UIView!
+    fileprivate var centerColorView: UIView!
+    fileprivate var verLineView:UIView!
     
     let tableOffset:CGFloat = 0
     let centerColorViewWidth:CGFloat = 20
@@ -33,28 +33,28 @@ class HomeItemCell: HFTableViewCell {
     }
     
     func initViews() {
-        self.selectionStyle = UITableViewCellSelectionStyle.Gray
+        self.selectionStyle = UITableViewCellSelectionStyle.gray
         
-        verLineView = UIView(frame: CGRectMake(SCREEN_WIDTH/2 - 0.5 + tableOffset,0,1,colorCellHeight))
-        verLineView.backgroundColor = UIColor.lightGrayColor()
+        verLineView = UIView(frame: CGRect(x: SCREEN_WIDTH/2 - 0.5 + tableOffset,y: 0,width: 1,height: colorCellHeight))
+        verLineView.backgroundColor = UIColor.lightGray
         self.addSubview(verLineView)
         
-        payLabel = UILabel(frame: CGRectMake(tableOffset,0,SCREEN_WIDTH/2 - paddingCenter - centerColorViewWidth/2,colorCellHeight))
-        payLabel.textAlignment = NSTextAlignment.Right
-        payLabel.textColor = UIColor.grayColor()
-        payLabel.font = UIFont.boldSystemFontOfSize(13)
+        payLabel = UILabel(frame: CGRect(x: tableOffset,y: 0,width: SCREEN_WIDTH/2 - paddingCenter - centerColorViewWidth/2,height: colorCellHeight))
+        payLabel.textAlignment = NSTextAlignment.right
+        payLabel.textColor = UIColor.gray
+        payLabel.font = UIFont.boldSystemFont(ofSize: 13)
         payLabel.adjustsFontSizeToFitWidth = true
         self.addSubview(payLabel)
         
-        centerColorView = UIView(frame: CGRectMake(SCREEN_WIDTH/2 - centerColorViewWidth/2 + tableOffset,colorCellHeight/2 - centerColorViewWidth/2,centerColorViewWidth,centerColorViewWidth))
+        centerColorView = UIView(frame: CGRect(x: SCREEN_WIDTH/2 - centerColorViewWidth/2 + tableOffset,y: colorCellHeight/2 - centerColorViewWidth/2,width: centerColorViewWidth,height: centerColorViewWidth))
         centerColorView.backgroundColor = appPayColor
         centerColorView.layer.cornerRadius = centerColorViewWidth / 2
         self.addSubview(centerColorView)
         
-        incomeLabel = UILabel(frame: CGRectMake(SCREEN_WIDTH/2 + centerColorViewWidth/2 + paddingCenter + tableOffset,0,SCREEN_WIDTH - SCREEN_WIDTH/2 - centerColorViewWidth/2,colorCellHeight))
-        incomeLabel.textAlignment = NSTextAlignment.Left
-        incomeLabel.textColor = UIColor.grayColor()
-        incomeLabel.font = UIFont.boldSystemFontOfSize(13)
+        incomeLabel = UILabel(frame: CGRect(x: SCREEN_WIDTH/2 + centerColorViewWidth/2 + paddingCenter + tableOffset,y: 0,width: SCREEN_WIDTH - SCREEN_WIDTH/2 - centerColorViewWidth/2,height: colorCellHeight))
+        incomeLabel.textAlignment = NSTextAlignment.left
+        incomeLabel.textColor = UIColor.gray
+        incomeLabel.font = UIFont.boldSystemFont(ofSize: 13)
         incomeLabel.adjustsFontSizeToFitWidth = true
         self.addSubview(incomeLabel)
         
@@ -64,12 +64,12 @@ class HomeItemCell: HFTableViewCell {
         didSet {
             if currentType == AccountType.pay {
                 centerColorView.backgroundColor = appPayColor
-                payLabel.hidden = false
-                incomeLabel.hidden = true
+                payLabel.isHidden = false
+                incomeLabel.isHidden = true
             } else {
                 centerColorView.backgroundColor = appIncomeColor
-                payLabel.hidden = true
-                incomeLabel.hidden = false
+                payLabel.isHidden = true
+                incomeLabel.isHidden = false
             }
         }
     }
@@ -77,9 +77,9 @@ class HomeItemCell: HFTableViewCell {
     var hideButtomVLine:Bool? {
         didSet {
             if hideButtomVLine == true {
-                verLineView.frame = CGRectMake(SCREEN_WIDTH/2 - 0.5 + tableOffset,0,1,colorCellHeight / 2)
+                verLineView.frame = CGRect(x: SCREEN_WIDTH/2 - 0.5 + tableOffset,y: 0,width: 1,height: colorCellHeight / 2)
             } else {
-                verLineView.frame = CGRectMake(SCREEN_WIDTH/2 - 0.5 + tableOffset,0,1,colorCellHeight)
+                verLineView.frame = CGRect(x: SCREEN_WIDTH/2 - 0.5 + tableOffset,y: 0,width: 1,height: colorCellHeight)
             }
         }
     }

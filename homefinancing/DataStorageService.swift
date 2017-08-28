@@ -9,10 +9,10 @@
 class DataStorageService: GCBaseStorage {
     
     static let sharedInstance = DataStorageService()
-    private override init() {}
+    fileprivate override init() {}
     
     // MARK: - typeList
-    internal func getAccountTypeList(type:AccountType) -> Array<AccountTypeModel> {
+    internal func getAccountTypeList(_ type:AccountType) -> Array<AccountTypeModel> {
         
         var typeArray = [AccountTypeModel]()
         
@@ -32,13 +32,13 @@ class DataStorageService: GCBaseStorage {
     }
     
     // MARK: - add
-    internal func addAccountToDatabase(accountModel:AccountModel) {
+    internal func addAccountToDatabase(_ accountModel:AccountModel) {
         self.deleteAccountWithId(accountModel.id!)
-        self.insertToTableWithModel(accountModel)
+        self.insertToTable(withModel: accountModel)
     }
     
     // MARK: - getList
-    internal func getHomeTableSourceListByMonth(monthStr:String) -> (array:Array<AccountGroupStruct>,payTotal:String,incomeTotal:String,surplus:String) {
+    internal func getHomeTableSourceListByMonth(_ monthStr:String) -> (array:Array<AccountGroupStruct>,payTotal:String,incomeTotal:String,surplus:String) {
         let accountModelArray = getAccountListByMonth(monthStr)
         
         var groupStructArray:Array<AccountGroupStruct> = []
@@ -46,7 +46,7 @@ class DataStorageService: GCBaseStorage {
         var totalPayAmount:Int = 0
         var totalIncomeAmount:Int = 0
         for accountModel in accountModelArray {
-            if accountModel.payOrIncome == String(AccountType.pay) {
+            if accountModel.payOrIncome == String(describing: AccountType.pay) {
                 totalPayAmount = totalPayAmount + Int(accountModel.amount!)!
             } else {
                 totalIncomeAmount = totalIncomeAmount + Int(accountModel.amount!)!
@@ -59,7 +59,7 @@ class DataStorageService: GCBaseStorage {
                 if groupStruct?.dayDateStr == accountModel.accountDate {
                     let originPayAmount:Int = Int((groupStruct?.payAmount)!)!
                     let originIncomAmount:Int = Int((groupStruct?.incomeAmount)!)!
-                    if accountModel.payOrIncome == String(AccountType.pay) {
+                    if accountModel.payOrIncome == String(describing: AccountType.pay) {
                         groupStruct?.payAmount = String(originPayAmount + Int(accountModel.amount!)!)
                     } else {
                         groupStruct?.incomeAmount = String(originIncomAmount + Int(accountModel.amount!)!)
@@ -77,15 +77,15 @@ class DataStorageService: GCBaseStorage {
         return (groupStructArray,String(totalPayAmount),String(totalIncomeAmount),String(totalIncomeAmount - totalPayAmount))
     }
     
-    private func getAccountListByMonth(monthStr:String) -> Array<AccountModel> {
-        let resultArr = self.selectModelArrayByClass(object_getClass(AccountModel()), params: ["accountMonthDate": monthStr], orderBy: "updateDate", isDesc: true)
+    fileprivate func getAccountListByMonth(_ monthStr:String) -> Array<AccountModel> {
+        let resultArr = self.selectModelArray(by: object_getClass(AccountModel()), params: ["accountMonthDate": monthStr], orderBy: "updateDate", isDesc: true)
         return resultArr as! Array<AccountModel>
     }
     
-    private func createGroupStructWith(accountModel:AccountModel) -> AccountGroupStruct {
+    fileprivate func createGroupStructWith(_ accountModel:AccountModel) -> AccountGroupStruct {
         var payAmount:String = "0"
         var incomeAmount:String = "0"
-        if accountModel.payOrIncome == String(AccountType.pay) {
+        if accountModel.payOrIncome == String(describing: AccountType.pay) {
             payAmount = accountModel.amount!
         } else {
             incomeAmount = accountModel.amount!
@@ -96,21 +96,21 @@ class DataStorageService: GCBaseStorage {
         return groupStruct
     }
     
-    private func dayCnStringWithDateStr(dateStr:String) -> String? {
+    fileprivate func dayCnStringWithDateStr(_ dateStr:String) -> String? {
         var dayCnString:String?
         if dateStr.characters.count > 9 {
-            if NSDate.dateDayStringWithStandardFormat(NSDate()) == dateStr {
+            if Date.dateDayStringWithStandardFormat(Date()) == dateStr {
                 dayCnString = "今天"
             } else {
-                let offset = dateStr.startIndex.advancedBy(8)
-                dayCnString = dateStr.substringFromIndex(offset) + "日"
+                let offset = dateStr.characters.index(dateStr.startIndex, offsetBy: 8)
+                dayCnString = dateStr.substring(from: offset) + "日"
             }
         }
         return dayCnString
     }
     
     // MARK: - getList
-    internal func deleteAccountWithId(accountId:String) {
-        self.deleteFromTableByClass(object_getClass(AccountModel()), params: ["id":accountId])
+    internal func deleteAccountWithId(_ accountId:String) {
+        self.deleteFromTable(by: object_getClass(AccountModel()), params: ["id":accountId])
     }
 }

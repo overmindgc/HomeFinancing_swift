@@ -14,7 +14,7 @@ class MemberTableCell: HFTableViewCell {
     internal var editImageButton:UIButton?
     internal var payAmountLabel:UILabel?
     
-    typealias editButtonCLickClosure = (model:MemberModel) -> Void
+    typealias editButtonCLickClosure = (_ model:MemberModel) -> Void
     internal var editClosure:editButtonCLickClosure?
     
     let padding:CGFloat = 20
@@ -24,8 +24,8 @@ class MemberTableCell: HFTableViewCell {
             memberLabel?.text = memberModel?.name
             memberLabel?.sizeToFit()
             let labelRect:CGRect = (memberLabel?.frame)!
-            memberLabel?.frame = CGRectMake(padding, memberCellHeight/2 - labelRect.size.height/2, labelRect.size.width, labelRect.size.height)
-            editImageButton?.frame = CGRectMake(padding + labelRect.size.width, (editImageButton?.frame.origin.y)!, (editImageButton?.frame.size.width)!, (editImageButton?.frame.size.height)!)
+            memberLabel?.frame = CGRect(x: padding, y: memberCellHeight/2 - labelRect.size.height/2, width: labelRect.size.width, height: labelRect.size.height)
+            editImageButton?.frame = CGRect(x: padding + labelRect.size.width, y: (editImageButton?.frame.origin.y)!, width: (editImageButton?.frame.size.width)!, height: (editImageButton?.frame.size.height)!)
         }
     }
     
@@ -41,34 +41,34 @@ class MemberTableCell: HFTableViewCell {
     }
     
     func initViews() {
-        self.selectionStyle = UITableViewCellSelectionStyle.None
+        self.selectionStyle = UITableViewCellSelectionStyle.none
         
-        memberLabel = UILabel(frame: CGRectZero)
+        memberLabel = UILabel(frame: CGRect.zero)
         memberLabel?.textColor = appGrayTextColor
         self.addSubview(memberLabel!)
         
         let editImage:UIImage = UIImage(named: "pen_gray")!
-        editImageButton = UIButton(frame: CGRectMake(0, 0, 50, memberCellHeight))
-        editImageButton?.setImage(editImage, forState: UIControlState.Normal)
-        editImageButton?.addTarget(self, action: #selector(self.editActButtonClickAction), forControlEvents: UIControlEvents.TouchUpInside)
+        editImageButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: memberCellHeight))
+        editImageButton?.setImage(editImage, for: UIControlState())
+        editImageButton?.addTarget(self, action: #selector(self.editActButtonClickAction), for: UIControlEvents.touchUpInside)
         self.addSubview(editImageButton!)
         
         let amountLabelWidth = SCREEN_WIDTH / 3 * 2
-        payAmountLabel = UILabel(frame: CGRectMake(SCREEN_WIDTH - padding - amountLabelWidth,0,amountLabelWidth,memberCellHeight))
+        payAmountLabel = UILabel(frame: CGRect(x: SCREEN_WIDTH - padding - amountLabelWidth,y: 0,width: amountLabelWidth,height: memberCellHeight))
         payAmountLabel?.textColor = appGrayTextColor
-        payAmountLabel?.font = UIFont.systemFontOfSize(14)
-        payAmountLabel?.textAlignment = NSTextAlignment.Right
+        payAmountLabel?.font = UIFont.systemFont(ofSize: 14)
+        payAmountLabel?.textAlignment = NSTextAlignment.right
         payAmountLabel?.text = "累计消费：0"
         self.addSubview(payAmountLabel!)
         
-        let lineView = UIView(frame: CGRectMake(padding,memberCellHeight - 1,SCREEN_WIDTH - padding,1))
-        lineView.backgroundColor = UIColor.groupTableViewBackgroundColor()
+        let lineView = UIView(frame: CGRect(x: padding,y: memberCellHeight - 1,width: SCREEN_WIDTH - padding,height: 1))
+        lineView.backgroundColor = UIColor.groupTableViewBackground
         self.addSubview(lineView)
     }
     
     func editActButtonClickAction() {
         if editClosure != nil {
-            editClosure!(model: memberModel!)
+            editClosure!(memberModel!)
         }
     }
     
