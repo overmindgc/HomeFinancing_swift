@@ -78,7 +78,7 @@ class DataStorageService: GCBaseStorage {
     }
     
     fileprivate func getAccountListByMonth(_ monthStr:String) -> Array<AccountModel> {
-        let resultArr = self.selectModelArray(by: object_getClass(AccountModel()), params: ["accountMonthDate": monthStr], orderBy: "updateDate", isDesc: true)
+        let resultArr = self.selectModelArray(by: object_getClass(AccountModel()), params: ["accountMonthDate": monthStr], orderBy: "accountDate", isDesc: true)
         return resultArr as! Array<AccountModel>
     }
     
